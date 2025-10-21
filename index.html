@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio - Mahasiswa Sistem Informasi</title>
+
+  <!-- ✅ Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- ✅ Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- ✅ Devicon Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-[#0d1117] text-[#e6edf3]">
+
+  <!-- 🔹 HEADER -->
+  <header class="bg-[#161b22] flex justify-between items-center px-10 py-5 shadow-md sticky top-0 z-10">
+    <h1 class="text-xl font-bold text-[#58a6ff]">My Portfolio</h1>
+    <nav class="space-x-6 text-sm font-medium">
+      <a href="#about" class="hover:text-[#79c0ff] transition">Tentang</a>
+      <a href="#skills" class="hover:text-[#79c0ff] transition">Keahlian</a>
+      <a href="#projects" class="hover:text-[#79c0ff] transition">Proyek</a>
+      <a href="#certificates" class="hover:text-[#79c0ff] transition">Sertifikat</a>
+      <a href="#contact" class="hover:text-[#79c0ff] transition">Kontak</a>
+    </nav>
+  </header>
+
+  <!-- 🔹 HERO -->
+  <section class="flex flex-col md:flex-row items-center justify-between px-10 md:px-16 py-24 bg-gradient-to-br from-[#161b22] to-[#0d1117]">
+    <div class="flex-1 text-center md:text-left">
+      <h2 class="text-3xl md:text-4xl font-semibold leading-snug">
+        Halo, saya <span class="text-[#58a6ff]">Dimas Kurniawan</span>
+      </h2>
+      <p class="mt-5 text-gray-400 max-w-lg mx-auto md:mx-0">
+        Saya tertarik pada bidang Machine Learning dan Frontend Development. 
+        Saya pernah mengerjakan beberapa project website dan aplikasi sederhana 
+        yang membantu meningkatkan pengalaman pengguna.
+      </p>
+      <a href="#contact" class="inline-block mt-6 bg-[#238636] hover:bg-[#2ea043] text-white px-5 py-2.5 rounded-lg transition">
+        Hubungi Saya
+      </a>
+    </div>
+
+    <img src="profil/Profil-saya.jpg" alt="Foto Profil" class="w-60 md:w-80 rounded-full shadow-xl mt-10 md:mt-0" />
+  </section>
+
+  <!-- 🔹 ABOUT -->
+  <section id="about" class="bg-[#161b22] mx-6 md:mx-12 my-10 p-10 rounded-2xl shadow-lg text-center md:text-left">
+    <h2 class="text-2xl font-semibold text-[#58a6ff] mb-6 text-center">Tentang Saya</h2>
+    <p class="max-w-2xl mx-auto text-gray-400 leading-relaxed text-justify">
+      Saya adalah mahasiswa <span class="text-[#58a6ff]">Sistem Informasi</span> di Universitas Muhammadiyah Pontianak.  
+      Saya lahir di Pontianak pada tanggal <span class="text-[#58a6ff]">3 Maret 2003</span> dan merupakan anak pertama dari dua bersaudara.  
+      Sejak kecil, saya memiliki ketertarikan terhadap dunia komputer dan teknologi. Namun, saat menempuh pendidikan di 
+      <span class="text-[#58a6ff]">SMK SMTI Pontianak</span>, saya memilih jurusan 
+      <span class="text-[#58a6ff]">Teknik Pemesinan</span> karena saya melihat keterampilan tersebut sangat dibutuhkan di dunia industri.  
+      Ketika pandemi COVID-19 melanda pada tahun 2020, saya mulai menyadari bahwa bidang komputer memiliki peluang yang luas 
+      dan sejalan dengan minat saya. Sejak saat itu, saya memutuskan untuk melanjutkan studi di jurusan 
+      <span class="text-[#58a6ff]">Sistem Informasi</span> agar dapat memperdalam pengetahuan di bidang teknologi.  
+      Meskipun awalnya saya masih awam dalam dunia komputer, saya terus berusaha untuk belajar dan mengembangkan diri 
+      agar dapat berkontribusi di bidang ini.
+    </p>
+  </section>
+
+  <!-- 🔹 EDUCATION -->
+  <section id="education" class="bg-[#161b22] mx-6 md:mx-12 my-10 p-10 rounded-2xl shadow-lg text-center">
+    <h2 class="text-2xl font-semibold text-[#58a6ff] mb-8">Pendidikan</h2>
+
+    <div class="space-y-4 text-gray-300">
+      <a href="https://www.instagram.com/sekolahdasarnegeri58/?hl=en" target="_blank" 
+         class="block bg-[#21262d] border border-[#30363d] p-4 rounded-xl hover:-translate-y-1 hover:border-[#58a6ff] transition">
+        <h3 class="text-lg font-semibold text-[#58a6ff]">Sekolah Dasar</h3>
+        <p class="text-sm">SDN 58 Sungai Raya</p>
+      </a>
+
+      <a href="https://spansasera.sch.id/" target="_blank" 
+         class="block bg-[#21262d] border border-[#30363d] p-4 rounded-xl hover:-translate-y-1 hover:border-[#58a6ff] transition">
+        <h3 class="text-lg font-semibold text-[#58a6ff]">Sekolah Menengah Pertama</h3>
+        <p class="text-sm">SMP Negeri 1 Sungai Raya</p>
+      </a>
+
+      <a href="https://smtipontianak.sch.id/" target="_blank" 
+         class="block bg-[#21262d] border border-[#30363d] p-4 rounded-xl hover:-translate-y-1 hover:border-[#58a6ff] transition">
+        <h3 class="text-lg font-semibold text-[#58a6ff]">Sekolah Menengah Kejuruan</h3>
+        <p class="text-sm">SMK SMTI Pontianak</p>
+      </a>
+
+      <a href="https://unmuhpnk.ac.id/" target="_blank" 
+         class="block bg-[#21262d] border border-[#30363d] p-4 rounded-xl hover:-translate-y-1 hover:border-[#58a6ff] transition">
+        <h3 class="text-lg font-semibold text-[#58a6ff]">Perguruan Tinggi</h3>
+        <p class="text-sm">
+          Universitas Muhammadiyah Pontianak – <span class="italic">Sistem Informasi</span>
+        </p>
+      </a>
+    </div>
+  </section>
+
+  <!-- 🔹 SKILLS -->
+  <section id="skills" class="bg-[#161b22] mx-6 md:mx-12 my-10 p-10 rounded-2xl shadow-lg">
+    <h2 class="text-2xl font-semibold text-[#58a6ff] text-center mb-8">Keahlian</h2>
+
+    <div class="flex flex-wrap justify-center gap-4">
+      <!-- Skill Items -->
+      <div class="skill-item"><i class="devicon-html5-plain colored text-2xl"></i><span>HTML</span></div>
+      <div class="skill-item"><i class="devicon-css3-plain colored text-2xl"></i><span>CSS</span></div>
+      <div class="skill-item"><i class="devicon-javascript-plain colored text-2xl"></i><span>JavaScript</span></div>
+      <div class="skill-item"><i class="devicon-python-plain colored text-2xl"></i><span>Python</span></div>
+      <div class="skill-item"><i class="devicon-laravel-plain colored text-2xl"></i><span>Laravel</span></div>
+      <div class="skill-item"><i class="devicon-flutter-plain colored text-2xl"></i><span>Flutter</span></div>
+    </div>
+  </section>
+
+  <!-- 🔹 PROJECTS -->
+  <section id="projects" class="bg-[#161b22] mx-6 md:mx-12 my-10 p-10 rounded-2xl shadow-lg">
+    <h2 class="text-2xl font-semibold text-[#58a6ff] text-center mb-8">Proyek</h2>
+
+    <div class="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto">
+      <a href="https://stamar-pontianak.devbmkg.my.id/" target="_blank"
+         class="project-card">
+        <h3 class="text-lg font-semibold text-[#58a6ff] mb-2">Website Monitoring Cuaca</h3>
+        <p class="text-gray-400 text-sm">
+          Website interaktif untuk menampilkan data cuaca real-time menggunakan API BMKG.
+        </p>
+      </a>
+
+      <a href="https://kurnya.github.io/Porto/" target="_blank"
+         class="project-card">
+        <h3 class="text-lg font-semibold text-[#58a6ff] mb-2">Portofolio Pribadi</h3>
+        <p class="text-gray-400 text-sm">
+          Website portofolio ini dibuat dengan Tailwind CSS untuk menampilkan proyek dan sertifikat saya.
+        </p>
+      </a>
+    </div>
+  </section>
+
+  <!-- 🔹 CERTIFICATES -->
+  <section id="certificates" class="bg-[#161b22] mx-6 md:mx-12 my-10 p-10 rounded-2xl shadow-lg">
+    <h2 class="text-2xl font-semibold text-[#58a6ff] text-center mb-8">Sertifikat & Penghargaan</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+      <div class="certificate-card">
+        <img src="sertifikat1.jpg" alt="Sertifikat 1" class="certificate-img" />
+        <p class="certificate-text">International Student Exchange With Asian University Taiwan</p>
+      </div>
+
+      <div class="certificate-card">
+        <img src="sertifikat2.jpg" alt="Sertifikat 2" class="certificate-img" />
+        <p class="certificate-text">Student Mobility in UNIMAS Sarawak Malaysia</p>
+      </div>
+
+      <div class="certificate-card">
+        <img src="sertifikat3.jpg" alt="Sertifikat 3" class="certificate-img" />
+        <p class="certificate-text">Student Mobility in ICAT's University Malaysia</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🔹 CONTACT -->
+  <section id="contact" class="bg-[#161b22] mx-6 md:mx-12 my-10 p-10 rounded-2xl shadow-lg text-center">
+    <h2 class="text-2xl font-semibold text-[#58a6ff] mb-6">Kontak Saya</h2>
+    <p class="mb-2">
+      📞 WhatsApp: 
+      <a href="https://wa.me/6289520786464" target="_blank" class="text-[#58a6ff] hover:text-[#79c0ff] transition">
+        +62 895-2078-6464
+      </a>
+    </p>
+    <p class="mb-4">
+      📧 Email: 
+      <a href="mailto:dimasqpr23@gmail.com" class="text-[#58a6ff] hover:text-[#79c0ff] transition">
+        dimasqpr23@gmail.com
+      </a>
+    </p>
+  </section>
+
+  <!-- 🔹 Inline Utility Styles -->
+  <style>
+    .skill-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.25rem;
+      border: 1px solid #30363d;
+      border-radius: 9999px;
+      background-color: #21262d;
+      color: #58a6ff;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    .skill-item:hover {
+      transform: translateY(-4px);
+      border-color: #58a6ff;
+    }
+    .project-card {
+      width: 18rem;
+      background-color: #21262d;
+      border: 1px solid #30363d;
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: #58a6ff;
+    }
+    .certificate-card {
+      background-color: #21262d;
+      border: 1px solid #30363d;
+      padding: 1rem;
+      border-radius: 0.75rem;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+    .certificate-card:hover {
+      transform: translateY(-4px);
+      border-color: #58a6ff;
+    }
+    .certificate-img {
+      width: 100%;
+      border-radius: 0.5rem;
+      margin-bottom: 0.75rem;
+      border: 1px solid #30363d;
+    }
+    .certificate-text {
+      color: #d1d5db;
+      font-size: 0.875rem;
+    }
+  </style>
+
+</body>
+</html>
