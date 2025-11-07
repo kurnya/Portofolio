@@ -191,7 +191,7 @@
     <div class="flex-1 text-center md:text-left relative z-10">
       <p class="text-[#58a6ff] text-lg font-medium mb-4 animate-fade-in">Halo, saya</p>
       <h2 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
-        <span class="text-[#58a6ff] hero-name">Dimas Kurniawan</span>
+        <span class="text-[#58a6ff] hero-name">Dimas<br class="sm:hidden" />Kurniawan</span>
       </h2>
       <p class="mt-6 text-gray-300 max-w-lg mx-auto md:mx-0 text-lg leading-relaxed animate-fade-in delay-500">
         Saya tertarik pada bidang <span class="text-[#58a6ff] font-semibold">Machine Learning</span> dan <span class="text-[#58a6ff] font-semibold">Frontend Development</span>.
@@ -226,20 +226,32 @@
   <script>
   // Ambil teks target
   const textElement = document.querySelector('.hero-name');
-  const text = textElement.textContent;
-  textElement.textContent = '';
+  const text = textElement.innerHTML;
+  textElement.innerHTML = '';
 
-text.split('').forEach(letter => {
-  const span = document.createElement('span');
-  if (letter === ' ') {
-    span.innerHTML = '&nbsp;'; 
-  } else {
-    span.textContent = letter;
-  }
-  span.style.display = 'inline-block';
-  span.style.opacity = 0;
-  textElement.appendChild(span);
-});
+  // Split by <br> tag first to preserve line breaks
+  const lines = text.split(/<br[^>]*>/);
+  
+  lines.forEach((line, lineIndex) => {
+    line.split('').forEach(letter => {
+      const span = document.createElement('span');
+      if (letter === ' ') {
+        span.innerHTML = '&nbsp;'; 
+      } else {
+        span.textContent = letter;
+      }
+      span.style.display = 'inline-block';
+      span.style.opacity = 0;
+      textElement.appendChild(span);
+    });
+    
+    // Add back the <br> tag if not the last line
+    if (lineIndex < lines.length - 1) {
+      const br = document.createElement('br');
+      br.className = 'sm:hidden';
+      textElement.appendChild(br);
+    }
+  });
 
 
   // Animasi GSAP
@@ -328,34 +340,54 @@ text.split('').forEach(letter => {
   </section>
 
   <!-- 🔹 EDUCATION -->
-  <section id="education" class="bg-[#161b22] mx-6 md:mx-12 my-10 p-10 rounded-2xl shadow-lg relative overflow-hidden pattern-lines">
+  <section id="education" class="bg-[#161b22] mx-6 md:mx-12 my-10 p-6 md:p-10 rounded-2xl shadow-lg relative overflow-hidden pattern-lines">
     <div class="absolute top-0 left-0 w-24 h-24 bg-[#58a6ff]/5 rounded-full blur-2xl"></div>
     <div class="absolute bottom-0 right-0 w-32 h-32 bg-[#238636]/5 rounded-full blur-3xl"></div>
 
-    <h2 class="text-3xl font-bold text-[#58a6ff] mb-12 text-center relative z-10">Pendidikan</h2>
+    <h2 class="text-2xl md:text-3xl font-bold text-[#58a6ff] mb-8 md:mb-12 text-center relative z-10">Pendidikan</h2>
 
     <div class="relative max-w-4xl mx-auto">
-      <div class="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-[#58a6ff] to-[#238636] h-full rounded-full"></div>
-      <div class="space-y-12">
+      <!-- Timeline line - hidden on mobile, visible on md+ -->
+      <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-[#58a6ff] to-[#238636] h-full rounded-full"></div>
+      <!-- Timeline line for mobile - on the left side -->
+      <div class="md:hidden absolute left-4 top-0 w-0.5 bg-gradient-to-b from-[#58a6ff] to-[#238636] h-full rounded-full"></div>
+      
+      <div class="space-y-8 md:space-y-12">
         <!-- University -->
-        <div class="relative flex items-center justify-between">
-          <div class="w-1/2 pr-8 text-right">
-            <div class="bg-[#21262d] border border-[#30363d] p-6 rounded-xl hover:border-[#58a6ff] transition-all duration-300 hover:-translate-y-1">
-              <h3 class="text-xl font-semibold text-[#58a6ff] mb-2">Perguruan Tinggi</h3>
-              <p class="text-gray-400 text-sm mb-2">2021 - Sekarang</p>
-              <p class="text-gray-300">S1 Sistem Informasi</p>
-              <p class="text-gray-400 italic">Universitas Muhammadiyah Pontianak</p>
+        <div class="relative flex items-start md:items-center md:justify-between">
+          <!-- Mobile dot -->
+          <div class="md:hidden absolute left-4 transform -translate-x-1/2 w-3 h-3 bg-[#58a6ff] rounded-full border-2 border-[#161b22] mt-2"></div>
+          <!-- Desktop layout -->
+          <div class="md:w-1/2 md:pr-8 md:text-right pl-10 md:pl-0 w-full">
+            <div class="bg-[#21262d] border border-[#30363d] p-4 md:p-6 rounded-xl hover:border-[#58a6ff] transition-all duration-300 hover:-translate-y-1">
+              <h3 class="text-lg md:text-xl font-semibold text-[#58a6ff] mb-2 break-words">Perguruan Tinggi</h3>
+              <p class="text-gray-400 text-xs md:text-sm mb-2">2021 - Sekarang</p>
+              <p class="text-gray-300 text-sm md:text-base break-words">S1 Sistem Informasi</p>
+              <p class="text-gray-400 italic text-xs md:text-sm break-words">Universitas Muhammadiyah Pontianak</p>
             </div>
           </div>
-          <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#58a6ff] rounded-full border-4 border-[#161b22]"></div>
-          <div class="w-1/2 pl-8"></div>
+          <!-- Desktop dot -->
+          <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#58a6ff] rounded-full border-4 border-[#161b22]"></div>
+          <div class="hidden md:block w-1/2 pl-8"></div>
         </div>
 
         <!-- Vocational School -->
-        <div class="relative flex items-center justify-between">
-          <div class="w-1/2 pr-8"></div>
-          <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#58a6ff] rounded-full border-4 border-[#161b22]"></div>
-          <div class="w-1/2 pl-8">
+        <div class="relative flex items-start md:items-center md:justify-between">
+          <!-- Mobile dot -->
+          <div class="md:hidden absolute left-4 transform -translate-x-1/2 w-3 h-3 bg-[#58a6ff] rounded-full border-2 border-[#161b22] mt-2"></div>
+          <!-- Mobile/Tablet layout -->
+          <div class="md:hidden pl-10 w-full">
+            <div class="bg-[#21262d] border border-[#30363d] p-4 rounded-xl hover:border-[#58a6ff] transition-all duration-300 hover:-translate-y-1">
+              <h3 class="text-lg font-semibold text-[#58a6ff] mb-2 break-words">Sekolah Menengah Kejuruan</h3>
+              <p class="text-gray-400 text-xs mb-2">2016 - 2019</p>
+              <p class="text-gray-300 text-sm break-words">Teknik Pemesinan</p>
+              <p class="text-gray-400 italic text-xs break-words">SMK SMTI Pontianak</p>
+            </div>
+          </div>
+          <!-- Desktop layout -->
+          <div class="hidden md:block w-1/2 pr-8"></div>
+          <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#58a6ff] rounded-full border-4 border-[#161b22]"></div>
+          <div class="hidden md:block w-1/2 pl-8">
             <div class="bg-[#21262d] border border-[#30363d] p-6 rounded-xl hover:border-[#58a6ff] transition-all duration-300 hover:-translate-y-1">
               <h3 class="text-xl font-semibold text-[#58a6ff] mb-2">Sekolah Menengah Kejuruan</h3>
               <p class="text-gray-400 text-sm mb-2">2016 - 2019</p>
@@ -366,23 +398,38 @@ text.split('').forEach(letter => {
         </div>
 
         <!-- Junior High -->
-        <div class="relative flex items-center justify-between">
-          <div class="w-1/2 pr-8 text-right">
-            <div class="bg-[#21262d] border border-[#30363d] p-6 rounded-xl hover:border-[#58a6ff] transition-all duration-300 hover:-translate-y-1">
-              <h3 class="text-xl font-semibold text-[#58a6ff] mb-2">Sekolah Menengah Pertama</h3>
-              <p class="text-gray-400 text-sm mb-2">2013 - 2016</p>
-              <p class="text-gray-300">SMP Negeri 1 Sungai Raya</p>
+        <div class="relative flex items-start md:items-center md:justify-between">
+          <!-- Mobile dot -->
+          <div class="md:hidden absolute left-4 transform -translate-x-1/2 w-3 h-3 bg-[#58a6ff] rounded-full border-2 border-[#161b22] mt-2"></div>
+          <!-- Desktop layout -->
+          <div class="md:w-1/2 md:pr-8 md:text-right pl-10 md:pl-0 w-full">
+            <div class="bg-[#21262d] border border-[#30363d] p-4 md:p-6 rounded-xl hover:border-[#58a6ff] transition-all duration-300 hover:-translate-y-1">
+              <h3 class="text-lg md:text-xl font-semibold text-[#58a6ff] mb-2 break-words">Sekolah Menengah Pertama</h3>
+              <p class="text-gray-400 text-xs md:text-sm mb-2">2013 - 2016</p>
+              <p class="text-gray-300 text-sm md:text-base break-words">SMP Negeri 1 Sungai Raya</p>
             </div>
           </div>
-          <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#58a6ff] rounded-full border-4 border-[#161b22]"></div>
-          <div class="w-1/2 pl-8"></div>
+          <!-- Desktop dot -->
+          <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#58a6ff] rounded-full border-4 border-[#161b22]"></div>
+          <div class="hidden md:block w-1/2 pl-8"></div>
         </div>
 
         <!-- Elementary -->
-        <div class="relative flex items-center justify-between">
-          <div class="w-1/2 pr-8"></div>
-          <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#58a6ff] rounded-full border-4 border-[#161b22]"></div>
-          <div class="w-1/2 pl-8">
+        <div class="relative flex items-start md:items-center md:justify-between">
+          <!-- Mobile dot -->
+          <div class="md:hidden absolute left-4 transform -translate-x-1/2 w-3 h-3 bg-[#58a6ff] rounded-full border-2 border-[#161b22] mt-2"></div>
+          <!-- Mobile/Tablet layout -->
+          <div class="md:hidden pl-10 w-full">
+            <div class="bg-[#21262d] border border-[#30363d] p-4 rounded-xl hover:border-[#58a6ff] transition-all duration-300 hover:-translate-y-1">
+              <h3 class="text-lg font-semibold text-[#58a6ff] mb-2 break-words">Sekolah Dasar</h3>
+              <p class="text-gray-400 text-xs mb-2">2007 - 2013</p>
+              <p class="text-gray-300 text-sm break-words">SDN 58 Sungai Raya</p>
+            </div>
+          </div>
+          <!-- Desktop layout -->
+          <div class="hidden md:block w-1/2 pr-8"></div>
+          <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#58a6ff] rounded-full border-4 border-[#161b22]"></div>
+          <div class="hidden md:block w-1/2 pl-8">
             <div class="bg-[#21262d] border border-[#30363d] p-6 rounded-xl hover:border-[#58a6ff] transition-all duration-300 hover:-translate-y-1">
               <h3 class="text-xl font-semibold text-[#58a6ff] mb-2">Sekolah Dasar</h3>
               <p class="text-gray-400 text-sm mb-2">2007 - 2013</p>
@@ -702,28 +749,28 @@ text.split('').forEach(letter => {
   </div>
 
 <!-- 🔹 CONTACT -->
-<section id="contact" class="bg-[#161b22] mx-6 md:mx-12 my-10 p-10 rounded-2xl shadow-lg relative overflow-hidden">
+<section id="contact" class="bg-[#161b22] mx-4 sm:mx-6 md:mx-12 my-10 p-6 md:p-10 rounded-2xl shadow-lg relative overflow-hidden">
   <div class="absolute top-0 right-0 w-32 h-32 bg-[#58a6ff]/5 rounded-full blur-3xl"></div>
   <div class="absolute bottom-0 left-0 w-24 h-24 bg-[#238636]/5 rounded-full blur-2xl"></div>
 
-  <h2 class="text-3xl font-bold text-[#58a6ff] text-center mb-12 relative z-10">Kontak Saya</h2>
+  <h2 class="text-2xl md:text-3xl font-bold text-[#58a6ff] text-center mb-8 md:mb-12 relative z-10">Kontak Saya</h2>
 
   <div class="max-w-2xl mx-auto relative z-10">
-    <div class="text-center space-y-8">
-      <div class="bg-[#21262d] border border-[#30363d] p-8 rounded-2xl">
-        <h3 class="text-2xl font-semibold text-white mb-6">Mari Terhubung</h3>
-        <p class="text-gray-400 leading-relaxed mb-8">
+    <div class="text-center space-y-6 md:space-y-8">
+      <div class="bg-[#21262d] border border-[#30363d] p-5 md:p-8 rounded-2xl">
+        <h3 class="text-xl md:text-2xl font-semibold text-white mb-4 md:mb-6">Mari Terhubung</h3>
+        <p class="text-gray-400 text-sm md:text-base leading-relaxed mb-6 md:mb-8 px-2">
           Tertarik untuk berkolaborasi atau memiliki pertanyaan? Jangan ragu untuk menghubungi saya melalui email atau media sosial.
         </p>
 
         <!-- Email -->
-        <div class="flex items-center justify-center gap-4 mb-8">
-          <div class="bg-gradient-to-br from-[#58a6ff]/20 to-[#58a6ff]/10 p-4 rounded-xl border border-[#58a6ff]/20">
-            <i class="fas fa-envelope text-[#58a6ff] text-2xl"></i>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-6 md:mb-8">
+          <div class="bg-gradient-to-br from-[#58a6ff]/20 to-[#58a6ff]/10 p-3 md:p-4 rounded-xl border border-[#58a6ff]/20 flex-shrink-0">
+            <i class="fas fa-envelope text-[#58a6ff] text-xl md:text-2xl"></i>
           </div>
-          <div class="text-left">
-            <p class="text-gray-400 text-sm mb-1">Email</p>
-            <a href="mailto:dimasqpr23@gmail.com" class="text-[#58a6ff] hover:text-[#79c0ff] transition-colors duration-300 font-medium text-lg">
+          <div class="text-center sm:text-left">
+            <p class="text-gray-400 text-xs md:text-sm mb-1">Email</p>
+            <a href="mailto:dimasqpr23@gmail.com" class="text-[#58a6ff] hover:text-[#79c0ff] transition-colors duration-300 font-medium text-sm md:text-lg break-all">
               dimasqpr23@gmail.com
             </a>
           </div>
@@ -731,19 +778,19 @@ text.split('').forEach(letter => {
 
         <!-- Social Links -->
         <div>
-          <h4 class="text-lg font-semibold text-white mb-6">Ikuti Saya</h4>
-          <div class="flex gap-6 justify-center">
-            <a href="https://github.com/kurnya" target="_blank" class="bg-[#21262d] border border-[#30363d] p-4 rounded-xl hover:border-[#58a6ff] hover:bg-[#58a6ff]/10 transition-all duration-300 group">
-              <i class="fab fa-github text-gray-400 group-hover:text-[#58a6ff] text-2xl transition-colors duration-300"></i>
+          <h4 class="text-base md:text-lg font-semibold text-white mb-4 md:mb-6">Ikuti Saya</h4>
+          <div class="flex flex-wrap gap-3 md:gap-6 justify-center">
+            <a href="https://github.com/kurnya" target="_blank" class="bg-[#21262d] border border-[#30363d] p-3 md:p-4 rounded-xl hover:border-[#58a6ff] hover:bg-[#58a6ff]/10 transition-all duration-300 group">
+              <i class="fab fa-github text-gray-400 group-hover:text-[#58a6ff] text-xl md:text-2xl transition-colors duration-300"></i>
             </a>
-            <a href="https://linkedin.com/in/dimas-kurniawan" target="_blank" class="bg-[#21262d] border border-[#30363d] p-4 rounded-xl hover:border-[#58a6ff] hover:bg-[#58a6ff]/10 transition-all duration-300 group">
-              <i class="fab fa-linkedin-in text-gray-400 group-hover:text-[#58a6ff] text-2xl transition-colors duration-300"></i>
+            <a href="https://linkedin.com/in/dimas-kurniawan" target="_blank" class="bg-[#21262d] border border-[#30363d] p-3 md:p-4 rounded-xl hover:border-[#58a6ff] hover:bg-[#58a6ff]/10 transition-all duration-300 group">
+              <i class="fab fa-linkedin-in text-gray-400 group-hover:text-[#58a6ff] text-xl md:text-2xl transition-colors duration-300"></i>
             </a>
-            <a href="https://instagram.com/dimasqpr" target="_blank" class="bg-[#21262d] border border-[#30363d] p-4 rounded-xl hover:border-[#58a6ff] hover:bg-[#58a6ff]/10 transition-all duration-300 group">
-              <i class="fab fa-instagram text-gray-400 group-hover:text-[#58a6ff] text-2xl transition-colors duration-300"></i>
+            <a href="https://instagram.com/dimasqpr" target="_blank" class="bg-[#21262d] border border-[#30363d] p-3 md:p-4 rounded-xl hover:border-[#58a6ff] hover:bg-[#58a6ff]/10 transition-all duration-300 group">
+              <i class="fab fa-instagram text-gray-400 group-hover:text-[#58a6ff] text-xl md:text-2xl transition-colors duration-300"></i>
             </a>
-            <a href="https://wa.me/6281234567890" target="_blank" class="bg-[#21262d] border border-[#30363d] p-4 rounded-xl hover:border-[#58a6ff] hover:bg-[#58a6ff]/10 transition-all duration-300 group">
-              <i class="fab fa-whatsapp text-gray-400 group-hover:text-[#58a6ff] text-2xl transition-colors duration-300"></i>
+            <a href="https://wa.me/6281234567890" target="_blank" class="bg-[#21262d] border border-[#30363d] p-3 md:p-4 rounded-xl hover:border-[#58a6ff] hover:bg-[#58a6ff]/10 transition-all duration-300 group">
+              <i class="fab fa-whatsapp text-gray-400 group-hover:text-[#58a6ff] text-xl md:text-2xl transition-colors duration-300"></i>
             </a>
           </div>
         </div>
@@ -793,7 +840,7 @@ text.split('').forEach(letter => {
 
     <div class="border-t border-[#30363d] mt-8 pt-8 text-center">
       <p class="text-gray-400">
-        &copy; 2024 Dimas Kurniawan. All rights reserved. | Built with <i class="fas fa-heart text-red-500"></i> using HTML, Tailwind CSS & JavaScript
+        Dibuat Oleh Dimas Kurniawan | Built using HTML, Tailwind CSS & JavaScript
       </p>
     </div>
   </div>
