@@ -191,7 +191,8 @@
     <div class="flex-1 text-center md:text-left relative z-10">
       <p class="text-[#58a6ff] text-lg font-medium mb-4 animate-fade-in">Halo, saya</p>
       <h2 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
-        <span class="text-[#58a6ff] hero-name">Dimas<br class="sm:hidden" /> Kurniawan</span>
+        <span class="text-[#58a6ff] hero-name block text-center sm:text-left sm:inline-block whitespace-nowrap">Dimas</span>
+        <span class="text-[#58a6ff] hero-name block text-center sm:text-left sm:inline-block whitespace-nowrap mt-2 sm:mt-0 sm:ml-4">Kurniawan</span>
       </h2>
       <p class="mt-6 text-gray-300 max-w-lg mx-auto md:mx-0 text-lg leading-relaxed animate-fade-in delay-500">
         Saya tertarik pada bidang <span class="text-[#58a6ff] font-semibold">Machine Learning</span> dan <span class="text-[#58a6ff] font-semibold">Frontend Development</span>.
@@ -224,38 +225,38 @@
   </section>
 
   <script>
-  // Ambil teks target
-  const textElement = document.querySelector('.hero-name');
-  const text = textElement.innerHTML;
-  textElement.innerHTML = '';
+  // Ambil teks target untuk masing-masing span
+  const firstWordElement = document.querySelector('h2 .hero-name:first-child');
+  const secondWordElement = document.querySelector('h2 .hero-name:last-child');
 
-  // Split by <br> tag first to preserve line breaks
-  const lines = text.split(/<br[^>]*>/);
-  
-  lines.forEach((line, lineIndex) => {
-    line.split('').forEach(letter => {
-      const span = document.createElement('span');
-      if (letter === ' ') {
-        span.innerHTML = '&nbsp;'; 
-      } else {
-        span.textContent = letter;
-      }
-      span.style.display = 'inline-block';
-      span.style.opacity = 0;
-      textElement.appendChild(span);
-    });
-    
-    // Add back the <br> tag if not the last line
-    if (lineIndex < lines.length - 1) {
-      const br = document.createElement('br');
-      br.className = 'sm:hidden';
-      textElement.appendChild(br);
-    }
+  // Proses kata pertama: Dimas
+  const firstText = firstWordElement.textContent || firstWordElement.innerText;
+  firstWordElement.innerHTML = '';
+
+  firstText.split('').forEach(letter => {
+    const letterSpan = document.createElement('span');
+    letterSpan.textContent = letter;
+    letterSpan.style.display = 'inline-block';
+    letterSpan.style.opacity = 0;
+    letterSpan.style.whiteSpace = 'nowrap';
+    firstWordElement.appendChild(letterSpan);
   });
 
+  // Proses kata kedua: Kurniawan
+  const secondText = secondWordElement.textContent || secondWordElement.innerText;
+  secondWordElement.innerHTML = '';
+
+  secondText.split('').forEach(letter => {
+    const letterSpan = document.createElement('span');
+    letterSpan.textContent = letter;
+    letterSpan.style.display = 'inline-block';
+    letterSpan.style.opacity = 0;
+    letterSpan.style.whiteSpace = 'nowrap';
+    secondWordElement.appendChild(letterSpan);
+  });
 
   // Animasi GSAP
-  gsap.to('.hero-name span', {
+  gsap.to('h2 .hero-name span', {
     opacity: 1,
     y: 0,
     duration: 0.6,
@@ -351,7 +352,7 @@
       <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-[#58a6ff] to-[#238636] h-full rounded-full"></div>
       <!-- Timeline line for mobile - on the left side -->
       <div class="md:hidden absolute left-4 top-0 w-0.5 bg-gradient-to-b from-[#58a6ff] to-[#238636] h-full rounded-full"></div>
-      
+
       <div class="space-y-8 md:space-y-12">
         <!-- University -->
         <div class="relative flex items-start md:items-center md:justify-between">
@@ -551,7 +552,7 @@
               <h3 class="text-xl font-semibold text-[#58a6ff]">Website Monitoring Cuaca</h3>
             </div>
             <p class="text-gray-300 mb-4 leading-relaxed">
-              Website interaktif untuk menampilkan data cuaca real-time menggunakan API BMKG. Fitur meliputi prakiraan cuaca, peta cuaca, dan informasi gempa bumi.
+              Website interaktif untuk menampilkan data cuaca real-time dari API BMKG dengan fitur prakiraan cuaca dan informasi gempa bumi.
             </p>
             <div class="flex flex-wrap gap-2 mb-4">
               <span class="px-3 py-1 bg-[#58a6ff]/10 text-[#58a6ff] rounded-full text-sm font-medium">HTML</span>
@@ -587,7 +588,7 @@
               <h3 class="text-xl font-semibold text-[#58a6ff]">Portofolio Pribadi</h3>
             </div>
             <p class="text-gray-300 mb-4 leading-relaxed">
-              Website portofolio responsif yang menampilkan proyek, sertifikat, dan informasi pribadi. Dibangun dengan fokus pada pengalaman pengguna yang optimal.
+              Website portofolio responsif yang menampilkan proyek, sertifikat, dan informasi pribadi dengan fokus pada pengalaman pengguna.
             </p>
             <div class="flex flex-wrap gap-2 mb-4">
               <span class="px-3 py-1 bg-[#58a6ff]/10 text-[#58a6ff] rounded-full text-sm font-medium">HTML</span>
@@ -623,7 +624,7 @@
               <h3 class="text-xl font-semibold text-[#58a6ff]">Web Jadwal Satpam PT Oscarmas</h3>
             </div>
             <p class="text-gray-300 mb-4 leading-relaxed">
-              Website sederhana untuk satpam di PT Oscarmas yang mengkonversi jadwal mereka agar mudah dibaca dan dapat diekspor ke format PDF.
+              Website sederhana untuk menampilkan jadwal satpam di PT Oscarmas dengan kemampuan ekspor ke format PDF.
             </p>
             <div class="flex flex-wrap gap-2 mb-4">
               <span class="px-3 py-1 bg-[#58a6ff]/10 text-[#58a6ff] rounded-full text-sm font-medium">HTML</span>
@@ -644,6 +645,42 @@
                 <span class="relative">
                   Source Code
                   <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#58a6ff] transition-all duration-300 group-hover/link:w-full"></span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card hover:border-[#58a6ff] transition-all duration-300 hover:-translate-y-1">
+        <div class="relative overflow-hidden rounded-t-xl">
+          <div class="p-6">
+            <div class="flex items-center gap-3 mb-4">
+              <i class="fas fa-mouse-pointer text-[#58a6ff] text-2xl"></i>
+              <h3 class="text-xl font-semibold text-[#58a6ff]">BlueClick - Auto Clicker</h3>
+            </div>
+            <p class="text-gray-300 mb-4 leading-relaxed">
+              Aplikasi autoclicker modern untuk mengotomatiskan klik mouse dan input keyboard dengan berbagai fitur canggih.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 bg-[#58a6ff]/10 text-[#58a6ff] rounded-full text-sm font-medium">Python</span>
+              <span class="px-3 py-1 bg-[#58a6ff]/10 text-[#58a6ff] rounded-full text-sm font-medium">PyQt5</span>
+              <span class="px-3 py-1 bg-[#58a6ff]/10 text-[#58a6ff] rounded-full text-sm font-medium">GUI</span>
+              <span class="px-3 py-1 bg-[#58a6ff]/10 text-[#58a6ff] rounded-full text-sm font-medium">Automation</span>
+            </div>
+            <div class="flex gap-4">
+              <a href="https://github.com/kurnya/BlueClick" target="_blank" class="inline-flex items-center gap-2 text-gray-400 hover:text-[#58a6ff] transition-all duration-300 font-medium relative group/link">
+                <i class="fab fa-github group-hover/link:scale-110 transition-transform duration-300"></i>
+                <span class="relative">
+                  Source Code
+                  <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#58a6ff] transition-all duration-300 group-hover/link:w-full"></span>
+                </span>
+              </a>
+              <a href="https://github.com/kurnya/BlueClick/releases" target="_blank" class="inline-flex items-center gap-2 text-[#58a6ff] hover:text-[#79c0ff] transition-all duration-300 font-medium relative group/link">
+                <i class="fas fa-download group-hover/link:scale-110 transition-transform duration-300"></i>
+                <span class="relative">
+                  Download
+                  <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#79c0ff] transition-all duration-300 group-hover/link:w-full"></span>
                 </span>
               </a>
             </div>
@@ -1040,7 +1077,7 @@
 
   <script>
     function calculateAge() {
-      const birthDate = new Date(2003, 2, 3); 
+      const birthDate = new Date(2003, 2, 3);
       const today = new Date();
       let age = today.getFullYear() - birthDate.getFullYear();
       const monthDiff = today.getMonth() - birthDate.getMonth();
