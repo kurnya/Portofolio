@@ -1,0 +1,2241 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio - Dimas Kurniawan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        line-height: 1.6;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      .gradient-bg {
+        background: linear-gradient(135deg, #161b22 0%, #0d1117 100%);
+      }
+
+      /* Enhanced Typography */
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+      }
+      h2 {
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 1.3;
+      }
+      h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 1.4;
+      }
+      p {
+        font-size: 1rem;
+        line-height: 1.7;
+      }
+
+      /* Subtle Background Patterns */
+      .pattern-dots::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: radial-gradient(
+          circle,
+          rgba(88, 166, 255, 0.03) 1px,
+          transparent 1px
+        );
+        background-size: 20px 20px;
+        pointer-events: none;
+      }
+
+      .pattern-lines::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image:
+          linear-gradient(45deg, rgba(88, 166, 255, 0.02) 25%, transparent 25%),
+          linear-gradient(
+            -45deg,
+            rgba(88, 166, 255, 0.02) 25%,
+            transparent 25%
+          ),
+          linear-gradient(45deg, transparent 75%, rgba(88, 166, 255, 0.02) 75%),
+          linear-gradient(-45deg, transparent 75%, rgba(88, 166, 255, 0.02) 75%);
+        background-size: 20px 20px;
+        background-position:
+          0 0,
+          0 10px,
+          10px -10px,
+          -10px 0px;
+        pointer-events: none;
+      }
+
+      /* Progress Bar Styles */
+      .progress-bar {
+        height: 8px;
+        background-color: #30363d;
+        border-radius: 4px;
+        overflow: hidden;
+        margin-top: 8px;
+      }
+      .progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #58a6ff 0%, #79c0ff 100%);
+        border-radius: 4px;
+        transition: width 1.5s ease;
+      }
+    </style>
+  </head>
+
+  <body class="bg-[#0d1117] text-[#e6edf3]">
+    <!-- HEADER -->
+    <header
+      class="bg-gradient-to-r from-[#161b22] to-[#21262d] flex justify-between items-center px-6 md:px-10 py-5 shadow-lg sticky top-0 z-20 backdrop-blur-sm"
+    >
+      <h1
+        class="text-xl font-bold text-[#58a6ff] hover:text-[#79c0ff] transition-colors duration-300"
+      >
+        Dimas Kurniawan
+      </h1>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-6 text-sm font-medium">
+        <a
+          href="#about"
+          class="hover:text-[#79c0ff] transition-colors duration-300 relative group"
+          >Tentang
+          <span
+            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#58a6ff] transition-all duration-300 group-hover:w-full"
+          ></span>
+        </a>
+        <a
+          href="#skills"
+          class="hover:text-[#79c0ff] transition-colors duration-300 relative group"
+          >Keahlian
+          <span
+            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#58a6ff] transition-all duration-300 group-hover:w-full"
+          ></span>
+        </a>
+        <a
+          href="#projects"
+          class="hover:text-[#79c0ff] transition-colors duration-300 relative group"
+          >Proyek
+          <span
+            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#58a6ff] transition-all duration-300 group-hover:w-full"
+          ></span>
+        </a>
+        <a
+          href="#certificates"
+          class="hover:text-[#79c0ff] transition-colors duration-300 relative group"
+          >Sertifikat
+          <span
+            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#58a6ff] transition-all duration-300 group-hover:w-full"
+          ></span>
+        </a>
+        <a
+          href="#contact"
+          class="hover:text-[#79c0ff] transition-colors duration-300 relative group"
+          >Kontak
+          <span
+            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#58a6ff] transition-all duration-300 group-hover:w-full"
+          ></span>
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="menu-btn"
+        class="md:hidden text-[#58a6ff] hover:text-[#79c0ff] focus:outline-none transition-colors duration-300"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-7 h-7"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+    </header>
+
+    <!-- MOBILE DRAWER -->
+    <div
+      id="mobile-menu"
+      class="fixed top-0 left-0 w-64 h-full bg-[#161b22] border-r border-[#30363d] shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out z-30"
+    >
+      <div
+        class="flex justify-between items-center px-5 py-4 border-b border-[#30363d]"
+      >
+        <h2 class="text-lg font-semibold text-[#58a6ff]">Navigasi</h2>
+        <button
+          id="close-btn"
+          class="text-gray-400 hover:text-white transition"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-6 h-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <nav class="flex flex-col mt-4 space-y-3 px-5 text-sm font-medium">
+        <a href="#about" class="hover:text-[#79c0ff] transition">Tentang</a>
+        <a href="#skills" class="hover:text-[#79c0ff] transition">Keahlian</a>
+        <a href="#projects" class="hover:text-[#79c0ff] transition">Proyek</a>
+        <a href="#certificates" class="hover:text-[#79c0ff] transition"
+          >Sertifikat</a
+        >
+        <a href="#contact" class="hover:text-[#79c0ff] transition">Kontak</a>
+      </nav>
+    </div>
+
+    <!-- Overlay -->
+    <div
+      id="overlay"
+      class="fixed inset-0 bg-black bg-opacity-50 hidden z-20 transition-opacity duration-300"
+    ></div>
+
+    <!-- Drawer -->
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const closeBtn = document.getElementById("close-btn");
+      const overlay = document.getElementById("overlay");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.remove("-translate-x-full");
+        overlay.classList.remove("hidden");
+      });
+
+      closeBtn.addEventListener("click", () => {
+        mobileMenu.classList.add("-translate-x-full");
+        overlay.classList.add("hidden");
+      });
+
+      overlay.addEventListener("click", () => {
+        mobileMenu.classList.add("-translate-x-full");
+        overlay.classList.add("hidden");
+      });
+    </script>
+
+    <!-- 🔹 HERO -->
+    <section
+      class="relative flex flex-col md:flex-row items-center justify-between px-10 md:px-16 py-24 bg-gradient-to-br from-[#161b22] via-[#0d1117] to-[#161b22] overflow-hidden min-h-screen"
+    >
+      <!-- Enhanced Background Pattern -->
+      <div class="absolute inset-0 opacity-10">
+        <div
+          class="absolute top-10 left-10 w-32 h-32 bg-[#58a6ff] rounded-full blur-3xl animate-pulse"
+        ></div>
+        <div
+          class="absolute bottom-10 right-10 w-40 h-40 bg-[#238636] rounded-full blur-3xl animate-pulse delay-1000"
+        ></div>
+        <div
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#58a6ff] rounded-full blur-3xl opacity-5 animate-pulse delay-2000"
+        ></div>
+        <div
+          class="absolute top-20 right-20 w-2 h-2 bg-[#58a6ff] rounded-full opacity-50 animate-bounce delay-500"
+        ></div>
+        <div
+          class="absolute bottom-20 left-20 w-1 h-1 bg-[#238636] rounded-full opacity-50 animate-bounce delay-1500"
+        ></div>
+        <div
+          class="absolute top-1/3 right-1/3 w-1.5 h-1.5 bg-[#f85149] rounded-full opacity-50 animate-bounce delay-2500"
+        ></div>
+      </div>
+
+      <div class="flex-1 text-center md:text-left relative z-10">
+        <p class="text-[#58a6ff] text-lg font-medium mb-4 animate-fade-in">
+          Halo, saya
+        </p>
+        <h2 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+          <span
+            class="text-[#58a6ff] hero-name block text-center sm:text-left sm:inline-block whitespace-nowrap"
+            >Dimas</span
+          >
+          <span
+            class="text-[#58a6ff] hero-name block text-center sm:text-left sm:inline-block whitespace-nowrap mt-2 sm:mt-0 sm:ml-4"
+            >Kurniawan</span
+          >
+        </h2>
+        <p
+          class="mt-6 text-gray-300 max-w-lg mx-auto md:mx-0 text-lg leading-relaxed animate-fade-in delay-500"
+        >
+          Saya tertarik pada bidang
+          <span class="text-[#58a6ff] font-semibold">Machine Learning</span> dan
+          <span class="text-[#58a6ff] font-semibold">Frontend Development</span
+          >. Saya pernah mengerjakan beberapa project website dan aplikasi
+          sederhana yang membantu meningkatkan pengalaman pengguna.
+        </p>
+        <div
+          class="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start animate-fade-in delay-1000"
+        >
+          <a
+            href="#contact"
+            class="inline-flex items-center gap-2 bg-gradient-to-r from-[#238636] to-[#2ea043] hover:from-[#2ea043] hover:to-[#238636] text-white px-8 py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 font-semibold"
+          >
+            <i class="fas fa-envelope"></i>
+            Hubungi Saya
+          </a>
+          <a
+            href="#projects"
+            class="inline-flex items-center gap-2 border-2 border-[#58a6ff] text-[#58a6ff] hover:bg-[#58a6ff] hover:text-white px-8 py-4 rounded-lg transition-all duration-300 font-semibold"
+          >
+            <i class="fas fa-briefcase"></i>
+            Lihat Proyek
+          </a>
+        </div>
+      </div>
+
+      <div class="relative z-10 mt-10 md:mt-0 animate-fade-in delay-1500">
+        <div class="relative">
+          <img
+            src="profil/Profil-saya.jpg"
+            alt="Foto Profil"
+            class="w-60 md:w-80 rounded-full shadow-2xl border-4 border-[#58a6ff]/20 hover:border-[#58a6ff]/40 transition-all duration-300 hover:scale-105"
+          />
+          <div
+            class="absolute -bottom-4 -right-4 bg-[#58a6ff] text-white p-4 rounded-full shadow-lg animate-bounce"
+          >
+            <i class="fas fa-code text-xl"></i>
+          </div>
+          <!-- Additional decorative elements -->
+          <div
+            class="absolute -top-4 -left-4 w-8 h-8 bg-[#238636] rounded-full opacity-50 animate-pulse"
+          ></div>
+          <div
+            class="absolute top-1/2 -left-8 w-4 h-4 bg-[#f85149] rounded-full opacity-50 animate-pulse delay-1000"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Ambil teks target untuk masing-masing span
+      const firstWordElement = document.querySelector(
+        "h2 .hero-name:first-child",
+      );
+      const secondWordElement = document.querySelector(
+        "h2 .hero-name:last-child",
+      );
+
+      // Proses kata pertama: Dimas
+      const firstText =
+        firstWordElement.textContent || firstWordElement.innerText;
+      firstWordElement.innerHTML = "";
+
+      firstText.split("").forEach((letter) => {
+        const letterSpan = document.createElement("span");
+        letterSpan.textContent = letter;
+        letterSpan.style.display = "inline-block";
+        letterSpan.style.opacity = 0;
+        letterSpan.style.whiteSpace = "nowrap";
+        firstWordElement.appendChild(letterSpan);
+      });
+
+      // Proses kata kedua: Kurniawan
+      const secondText =
+        secondWordElement.textContent || secondWordElement.innerText;
+      secondWordElement.innerHTML = "";
+
+      secondText.split("").forEach((letter) => {
+        const letterSpan = document.createElement("span");
+        letterSpan.textContent = letter;
+        letterSpan.style.display = "inline-block";
+        letterSpan.style.opacity = 0;
+        letterSpan.style.whiteSpace = "nowrap";
+        secondWordElement.appendChild(letterSpan);
+      });
+
+      // Animasi GSAP
+      gsap.to("h2 .hero-name span", {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: "power3.out",
+        stagger: 0.05,
+        delay: 0.2,
+        from: { y: 40 },
+      });
+    </script>
+
+    <!-- 🔹 ABOUT -->
+    <section
+      id="about"
+      class="bg-[#161b22] mx-6 md:mx-12 my-10 p-10 rounded-2xl shadow-lg relative overflow-hidden pattern-dots"
+    >
+      <div
+        class="absolute top-0 right-0 w-32 h-32 bg-[#58a6ff]/5 rounded-full blur-3xl"
+      ></div>
+      <div
+        class="absolute bottom-0 left-0 w-24 h-24 bg-[#238636]/5 rounded-full blur-2xl"
+      ></div>
+
+      <h2
+        class="text-3xl font-bold text-[#58a6ff] mb-12 text-center relative z-10"
+      >
+        Tentang Saya
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-12 items-center relative z-10">
+        <div class="space-y-8">
+          <div class="flex items-start gap-6 group">
+            <div
+              class="bg-gradient-to-br from-[#58a6ff]/20 to-[#58a6ff]/10 p-4 rounded-xl border border-[#58a6ff]/20 group-hover:border-[#58a6ff]/40 transition-all duration-300"
+            >
+              <i class="fas fa-graduation-cap text-[#58a6ff] text-2xl"></i>
+            </div>
+            <div class="flex-1">
+              <h3
+                class="text-xl font-semibold text-white mb-3 group-hover:text-[#58a6ff] transition-colors duration-300"
+              >
+                Pendidikan
+              </h3>
+              <p class="text-gray-400 leading-relaxed">
+                Mahasiswa
+                <span class="text-[#58a6ff] font-medium">Sistem Informasi</span>
+                di Universitas Muhammadiyah Pontianak. Lahir di Pontianak pada
+                <span class="text-[#58a6ff]">3 Maret 2003</span> sebagai anak
+                pertama dari dua bersaudara.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-6 group">
+            <div
+              class="bg-gradient-to-br from-[#58a6ff]/20 to-[#58a6ff]/10 p-4 rounded-xl border border-[#58a6ff]/20 group-hover:border-[#58a6ff]/40 transition-all duration-300"
+            >
+              <i class="fas fa-code text-[#58a6ff] text-2xl"></i>
+            </div>
+            <div class="flex-1">
+              <h3
+                class="text-xl font-semibold text-white mb-3 group-hover:text-[#58a6ff] transition-colors duration-300"
+              >
+                Minat & Karier
+              </h3>
+              <p class="text-gray-400 leading-relaxed">
+                Tertarik pada
+                <span class="text-[#58a6ff] font-medium">Machine Learning</span>
+                dan
+                <span class="text-[#58a6ff] font-medium"
+                  >Frontend Development</span
+                >. Awalnya memilih Teknik Pemesinan di SMK, namun beralih ke
+                dunia teknologi saat pandemi COVID-19.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-6 group">
+            <div
+              class="bg-gradient-to-br from-[#58a6ff]/20 to-[#58a6ff]/10 p-4 rounded-xl border border-[#58a6ff]/20 group-hover:border-[#58a6ff]/40 transition-all duration-300"
+            >
+              <i class="fas fa-rocket text-[#58a6ff] text-2xl"></i>
+            </div>
+            <div class="flex-1">
+              <h3
+                class="text-xl font-semibold text-white mb-3 group-hover:text-[#58a6ff] transition-colors duration-300"
+              >
+                Perjalanan
+              </h3>
+              <p class="text-gray-400 leading-relaxed">
+                Dari awam di dunia komputer, saya terus belajar dan
+                mengembangkan diri untuk berkontribusi di bidang teknologi.
+                Fokus pada pembuatan aplikasi dan website yang meningkatkan
+                pengalaman pengguna.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <div
+            class="inline-block p-8 bg-gradient-to-br from-[#58a6ff]/10 to-[#238636]/10 rounded-3xl border border-[#58a6ff]/20 hover:border-[#58a6ff]/40 transition-all duration-300 hover:scale-105"
+          >
+            <div class="relative mb-6">
+              <i class="fas fa-user-graduate text-[#58a6ff] text-7xl"></i>
+              <div
+                class="absolute -top-2 -right-2 w-6 h-6 bg-[#238636] rounded-full animate-pulse"
+              ></div>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3">Dimas Kurniawan</h3>
+            <p class="text-gray-400 text-lg mb-6">Mahasiswa Sistem Informasi</p>
+            <div class="flex justify-center gap-8">
+              <div class="text-center">
+                <div
+                  class="text-3xl font-bold text-[#58a6ff] mb-1"
+                  id="age-display"
+                >
+                  21
+                </div>
+                <div class="text-sm text-gray-400">Tahun</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-bold text-[#58a6ff] mb-1">2022</div>
+                <div class="text-sm text-gray-400">Bergabung</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🔹 EDUCATION -->
+    <section
+      id="education"
+      class="bg-[#161b22] mx-6 md:mx-12 my-10 p-6 md:p-10 rounded-2xl shadow-lg relative overflow-hidden pattern-lines"
+    >
+      <div
+        class="absolute top-0 left-0 w-24 h-24 bg-[#58a6ff]/5 rounded-full blur-2xl"
+      ></div>
+      <div
+        class="absolute bottom-0 right-0 w-32 h-32 bg-[#238636]/5 rounded-full blur-3xl"
+      ></div>
+
+      <h2
+        class="text-2xl md:text-3xl font-bold text-[#58a6ff] mb-8 md:mb-12 text-center relative z-10"
+      >
+        Pendidikan
+      </h2>
+
+      <div class="relative max-w-4xl mx-auto">
+        <!-- Timeline line - hidden on mobile, visible on md+ -->
+        <div
+          class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-[#58a6ff] to-[#238636] h-full rounded-full"
+        ></div>
+        <!-- Timeline line for mobile - on the left side -->
+        <div
+          class="md:hidden absolute left-4 top-0 w-0.5 bg-gradient-to-b from-[#58a6ff] to-[#238636] h-full rounded-full"
+        ></div>
+
+        <div class="space-y-8 md:space-y-12">
+          <!-- University -->
+          <div
+            class="relative flex items-start md:items-center md:justify-between"
+          >
+            <!-- Mobile dot -->
+            <div
+              class="md:hidden absolute left-4 transform -translate-x-1/2 w-3 h-3 bg-[#58a6ff] rounded-full border-2 border-[#161b22] mt-2"
+            ></div>
+            <!-- Desktop layout -->
+            <div class="md:w-1/2 md:pr-8 md:text-right pl-10 md:pl-0 w-full">
+              <div
+                class="bg-[#21262d] border border-[#30363d] p-4 md:p-6 rounded-xl hover:border-[#58a6ff] transition-all duration-300 hover:-translate-y-1"
+              >
+                <h3
+                  class="text-lg md:text-xl font-semibold text-[#58a6ff] mb-2 break-words"
+                >
+                  Perguruan Tinggi
+                </h3>
+                <p class="text-gray-400 text-xs md:text-sm mb-2">
+                  2022 - Sekarang
+                </p>
+                <p class="text-gray-300 text-sm md:text-base break-words">
+                  S1 Sistem Informasi
+                </p>
+                <p class="text-gray-400 italic text-xs md:text-sm break-words">
+                  Universitas Muhammadiyah Pontianak
+                </p>
+              </div>
+            </div>
+            <!-- Desktop dot -->
+            <div
+              class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#58a6ff] rounded-full border-4 border-[#161b22]"
+            ></div>
+            <div class="hidden md:block w-1/2 pl-8"></div>
+          </div>
+
+          <!-- Vocational School -->
+          <div
+            class="relative flex items-start md:items-center md:justify-between"
+          >
+            <!-- Mobile dot -->
+            <div
+              class="md:hidden absolute left-4 transform -translate-x-1/2 w-3 h-3 bg-[#58a6ff] rounded-full border-2 border-[#161b22] mt-2"
+            ></div>
+            <!-- Mobile/Tablet layout -->
+            <div class="md:hidden pl-10 w-full">
+              <div
+                class="bg-[#21262d] border border-[#30363d] p-4 rounded-xl hover:border-[#58a6ff] transition-all duration-300 hover:-translate-y-1"
+              >
+                <h3
+                  class="text-lg font-semibold text-[#58a6ff] mb-2 break-words"
+                >
+                  Sekolah Menengah Kejuruan
+                </h3>
+                <p class="text-gray-400 text-xs mb-2">2019 - 2021</p>
+                <p class="text-gray-300 text-sm break-words">
+                  Teknik Pemesinan
+                </p>
+                <p class="text-gray-400 italic text-xs break-words">
+                  SMK SMTI Pontianak
+                </p>
+              </div>
+            </div>
+            <!-- Desktop layout -->
+            <div class="hidden md:block w-1/2 pr-8"></div>
+            <div
+              class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#58a6ff] rounded-full border-4 border-[#161b22]"
+            ></div>
+            <div class="hidden md:block w-1/2 pl-8">
+              <div
+                class="bg-[#21262d] border border-[#30363d] p-6 rounded-xl hover:border-[#58a6ff] transition-all duration-300 hover:-translate-y-1"
+              >
+                <h3 class="text-xl font-semibold text-[#58a6ff] mb-2">
+                  Sekolah Menengah Kejuruan
+                </h3>
+                <p class="text-gray-400 text-sm mb-2">2019 - 2021</p>
+                <p class="text-gray-300">Teknik Pemesinan</p>
+                <p class="text-gray-400 italic">SMK SMTI Pontianak</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Junior High -->
+          <div
+            class="relative flex items-start md:items-center md:justify-between"
+          >
+            <!-- Mobile dot -->
+            <div
+              class="md:hidden absolute left-4 transform -translate-x-1/2 w-3 h-3 bg-[#58a6ff] rounded-full border-2 border-[#161b22] mt-2"
+            ></div>
+            <!-- Desktop layout -->
+            <div class="md:w-1/2 md:pr-8 md:text-right pl-10 md:pl-0 w-full">
+              <div
+                class="bg-[#21262d] border border-[#30363d] p-4 md:p-6 rounded-xl hover:border-[#58a6ff] transition-all duration-300 hover:-translate-y-1"
+              >
+                <h3
+                  class="text-lg md:text-xl font-semibold text-[#58a6ff] mb-2 break-words"
+                >
+                  Sekolah Menengah Pertama
+                </h3>
+                <p class="text-gray-400 text-xs md:text-sm mb-2">2017 - 2019</p>
+                <p class="text-gray-300 text-sm md:text-base break-words">
+                  SMP Negeri 1 Sungai Raya
+                </p>
+              </div>
+            </div>
+            <!-- Desktop dot -->
+            <div
+              class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#58a6ff] rounded-full border-4 border-[#161b22]"
+            ></div>
+            <div class="hidden md:block w-1/2 pl-8"></div>
+          </div>
+
+          <!-- Elementary -->
+          <div
+            class="relative flex items-start md:items-center md:justify-between"
+          >
+            <!-- Mobile dot -->
+            <div
+              class="md:hidden absolute left-4 transform -translate-x-1/2 w-3 h-3 bg-[#58a6ff] rounded-full border-2 border-[#161b22] mt-2"
+            ></div>
+            <!-- Mobile/Tablet layout -->
+            <div class="md:hidden pl-10 w-full">
+              <div
+                class="bg-[#21262d] border border-[#30363d] p-4 rounded-xl hover:border-[#58a6ff] transition-all duration-300 hover:-translate-y-1"
+              >
+                <h3
+                  class="text-lg font-semibold text-[#58a6ff] mb-2 break-words"
+                >
+                  Sekolah Dasar
+                </h3>
+                <p class="text-gray-400 text-xs mb-2">2010 - 2017</p>
+                <p class="text-gray-300 text-sm break-words">
+                  SDN 58 Sungai Raya
+                </p>
+              </div>
+            </div>
+            <!-- Desktop layout -->
+            <div class="hidden md:block w-1/2 pr-8"></div>
+            <div
+              class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#58a6ff] rounded-full border-4 border-[#161b22]"
+            ></div>
+            <div class="hidden md:block w-1/2 pl-8">
+              <div
+                class="bg-[#21262d] border border-[#30363d] p-6 rounded-xl hover:border-[#58a6ff] transition-all duration-300 hover:-translate-y-1"
+              >
+                <h3 class="text-xl font-semibold text-[#58a6ff] mb-2">
+                  Sekolah Dasar
+                </h3>
+                <p class="text-gray-400 text-sm mb-2">2010 - 2017</p>
+                <p class="text-gray-300">SDN 58 Sungai Raya</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🔹 SKILLS -->
+    <section
+      id="skills"
+      class="bg-[#161b22] mx-6 md:mx-12 my-10 p-10 rounded-2xl shadow-lg relative overflow-hidden"
+    >
+      <div
+        class="absolute top-0 right-0 w-32 h-32 bg-[#58a6ff]/5 rounded-full blur-3xl"
+      ></div>
+      <div
+        class="absolute bottom-0 left-0 w-24 h-24 bg-[#238636]/5 rounded-full blur-2xl"
+      ></div>
+
+      <h2
+        class="text-3xl font-bold text-[#58a6ff] text-center mb-12 relative z-10"
+      >
+        Keahlian
+      </h2>
+
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto relative z-10"
+      >
+        <!-- HTML -->
+        <div class="skill-progress">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center gap-3">
+              <i class="devicon-html5-plain colored text-2xl"></i>
+              <span class="text-white font-medium">HTML</span>
+            </div>
+            <span class="text-[#58a6ff] font-semibold">90%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 90%"></div>
+          </div>
+        </div>
+
+        <!-- CSS -->
+        <div class="skill-progress">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center gap-3">
+              <i class="devicon-css3-plain colored text-2xl"></i>
+              <span class="text-white font-medium">CSS</span>
+            </div>
+            <span class="text-[#58a6ff] font-semibold">80%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 80%"></div>
+          </div>
+        </div>
+
+        <!-- JavaScript -->
+        <div class="skill-progress">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center gap-3">
+              <i class="devicon-javascript-plain colored text-2xl"></i>
+              <span class="text-white font-medium">JavaScript</span>
+            </div>
+            <span class="text-[#58a6ff] font-semibold">80%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 80%"></div>
+          </div>
+        </div>
+
+        <!-- Python -->
+        <div class="skill-progress">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center gap-3">
+              <i class="devicon-python-plain colored text-2xl"></i>
+              <span class="text-white font-medium">Python</span>
+            </div>
+            <span class="text-[#58a6ff] font-semibold">85%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 85%"></div>
+          </div>
+        </div>
+
+        <!-- Laravel -->
+        <div class="skill-progress">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center gap-3">
+              <i class="devicon-laravel-plain colored text-2xl"></i>
+              <span class="text-white font-medium">Laravel</span>
+            </div>
+            <span class="text-[#58a6ff] font-semibold">82%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 82%"></div>
+          </div>
+        </div>
+
+        <!-- Flutter -->
+        <div class="skill-progress">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center gap-3">
+              <i class="devicon-flutter-plain colored text-2xl"></i>
+              <span class="text-white font-medium">Flutter</span>
+            </div>
+            <span class="text-[#58a6ff] font-semibold">74%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 74%"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section
+      id="projects"
+      class="bg-[#161b22] mx-6 md:mx-12 my-10 p-10 rounded-2xl shadow-lg relative overflow-hidden"
+    >
+      <div
+        class="absolute top-0 right-0 w-32 h-32 bg-[#58a6ff]/5 rounded-full blur-3xl"
+      ></div>
+      <div
+        class="absolute bottom-0 left-0 w-24 h-24 bg-[#238636]/5 rounded-full blur-2xl"
+      ></div>
+
+      <h2
+        class="text-3xl font-bold text-[#58a6ff] text-center mb-12 relative z-10"
+      >
+        Proyek
+      </h2>
+
+      <div
+        class="flex flex-wrap justify-center gap-8 max-w-6xl mx-auto relative z-10"
+      >
+        <div
+          class="project-card hover:border-[#58a6ff] transition-all duration-300 hover:-translate-y-1"
+        >
+          <div class="relative overflow-hidden rounded-t-xl">
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-4">
+                <i class="fas fa-cloud-sun text-[#58a6ff] text-2xl"></i>
+                <h3 class="text-xl font-semibold text-[#58a6ff]">
+                  Website Monitoring Cuaca
+                </h3>
+              </div>
+              <p class="text-gray-300 mb-4 leading-relaxed">
+                Website interaktif untuk menampilkan data cuaca real-time dari
+                API BMKG dengan fitur pemantauan cuaca.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-3 py-1 bg-[#58a6ff]/10 text-[#58a6ff] rounded-full text-sm font-medium"
+                  >HTML</span
+                >
+                <span
+                  class="px-3 py-1 bg-[#58a6ff]/10 text-[#58a6ff] rounded-full text-sm font-medium"
+                  >CSS</span
+                >
+                <span
+                  class="px-3 py-1 bg-[#58a6ff]/10 text-[#58a6ff] rounded-full text-sm font-medium"
+                  >JavaScript</span
+                >
+                <span
+                  class="px-3 py-1 bg-[#58a6ff]/10 text-[#58a6ff] rounded-full text-sm font-medium"
+                  >API</span
+                >
+              </div>
+              <div class="flex gap-4">
+                <a
+                  href="https://stamar-pontianak.devbmkg.my.id/monitoring"
+                  target="_blank"
+                  class="inline-flex items-center gap-2 text-[#58a6ff] hover:text-[#79c0ff] transition-all duration-300 font-medium relative group/link"
+                >
+                  <i
+                    class="fas fa-external-link-alt group-hover/link:scale-110 transition-transform duration-300"
+                  ></i>
+                  <span class="relative">
+                    Live Demo
+                    <span
+                      class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#79c0ff] transition-all duration-300 group-hover/link:w-full"
+                    ></span>
+                  </span>
+                </a>
+                <button
+                  onclick="showBMKGAlert()"
+                  class="inline-flex items-center gap-2 text-gray-400 hover:text-[#58a6ff] transition-all duration-300 font-medium relative group/link"
+                >
+                  <i
+                    class="fab fa-github group-hover/link:scale-110 transition-transform duration-300"
+                  ></i>
+                  <span class="relative">
+                    Source Code
+                    <span
+                      class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#58a6ff] transition-all duration-300 group-hover/link:w-full"
+                    ></span>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="project-card hover:border-[#58a6ff] transition-all duration-300 hover:-translate-y-1"
+        >
+          <div class="relative overflow-hidden rounded-t-xl">
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-4">
+                <i class="fas fa-user-tie text-[#58a6ff] text-2xl"></i>
+                <h3 class="text-xl font-semibold text-[#58a6ff]">
+                  Portofolio Pribadi
+                </h3>
+              </div>
+              <p class="text-gray-300 mb-4 leading-relaxed">
+                Website portofolio responsif yang menampilkan proyek,
+                sertifikat, dan informasi pribadi dengan fokus pada pengalaman
+                pengguna.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-3 py-1 bg-[#58a6ff]/10 text-[#58a6ff] rounded-full text-sm font-medium"
+                  >HTML</span
+                >
+                <span
+                  class="px-3 py-1 bg-[#58a6ff]/10 text-[#58a6ff] rounded-full text-sm font-medium"
+                  >Tailwind CSS</span
+                >
+                <span
+                  class="px-3 py-1 bg-[#58a6ff]/10 text-[#58a6ff] rounded-full text-sm font-medium"
+                  >JavaScript</span
+                >
+                <span
+                  class="px-3 py-1 bg-[#58a6ff]/10 text-[#58a6ff] rounded-full text-sm font-medium"
+                  >GSAP</span
+                >
+              </div>
+              <div class="flex gap-4">
+                <a
+                  href="https://kurnya.github.io/Portofolio/"
+                  target="_blank"
+                  class="inline-flex items-center gap-2 text-[#58a6ff] hover:text-[#79c0ff] transition-all duration-300 font-medium relative group/link"
+                >
+                  <i
+                    class="fas fa-external-link-alt group-hover/link:scale-110 transition-transform duration-300"
+                  ></i>
+                  <span class="relative">
+                    Live Demo
+                    <span
+                      class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#79c0ff] transition-all duration-300 group-hover/link:w-full"
+                    ></span>
+                  </span>
+                </a>
+                <a
+                  href="https://github.com/kurnya/Portofolio"
+                  target="_blank"
+                  class="inline-flex items-center gap-2 text-gray-400 hover:text-[#58a6ff] transition-all duration-300 font-medium relative group/link"
+                >
+                  <i
+                    class="fab fa-github group-hover/link:scale-110 transition-transform duration-300"
+                  ></i>
+                  <span class="relative">
+                    Source Code
+                    <span
+                      class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#58a6ff] transition-all duration-300 group-hover/link:w-full"
+                    ></span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="project-card hover:border-[#58a6ff] transition-all duration-300 hover:-translate-y-1"
+        >
+          <div class="relative overflow-hidden rounded-t-xl">
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-4">
+                <i class="fas fa-user-shield text-[#58a6ff] text-2xl"></i>
+                <h3 class="text-xl font-semibold text-[#58a6ff]">
+                  Web Jadwal Satpam PT Oscarmas
+                </h3>
+              </div>
+              <p class="text-gray-300 mb-4 leading-relaxed">
+                Website sederhana untuk menampilkan jadwal satpam di PT Oscarmas
+                dengan kemampuan ekspor ke format PDF.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-3 py-1 bg-[#58a6ff]/10 text-[#58a6ff] rounded-full text-sm font-medium"
+                  >HTML</span
+                >
+                <span
+                  class="px-3 py-1 bg-[#58a6ff]/10 text-[#58a6ff] rounded-full text-sm font-medium"
+                  >CSS</span
+                >
+                <span
+                  class="px-3 py-1 bg-[#58a6ff]/10 text-[#58a6ff] rounded-full text-sm font-medium"
+                  >JavaScript</span
+                >
+                <span
+                  class="px-3 py-1 bg-[#58a6ff]/10 text-[#58a6ff] rounded-full text-sm font-medium"
+                  >PDF</span
+                >
+              </div>
+              <div class="flex gap-4">
+                <a
+                  href="https://kurnya.github.io/SISKOWAL/"
+                  target="_blank"
+                  class="inline-flex items-center gap-2 text-[#58a6ff] hover:text-[#79c0ff] transition-all duration-300 font-medium relative group/link"
+                >
+                  <i
+                    class="fas fa-external-link-alt group-hover/link:scale-110 transition-transform duration-300"
+                  ></i>
+                  <span class="relative">
+                    Live Demo
+                    <span
+                      class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#79c0ff] transition-all duration-300 group-hover/link:w-full"
+                    ></span>
+                  </span>
+                </a>
+                <a
+                  href="https://github.com/kurnya/SISKOWAL"
+                  target="_blank"
+                  class="inline-flex items-center gap-2 text-gray-400 hover:text-[#58a6ff] transition-all duration-300 font-medium relative group/link"
+                >
+                  <i
+                    class="fab fa-github group-hover/link:scale-110 transition-transform duration-300"
+                  ></i>
+                  <span class="relative">
+                    Source Code
+                    <span
+                      class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#58a6ff] transition-all duration-300 group-hover/link:w-full"
+                    ></span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="project-card hover:border-[#58a6ff] transition-all duration-300 hover:-translate-y-1"
+        >
+          <div class="relative overflow-hidden rounded-t-xl">
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-4">
+                <i class="fas fa-mouse-pointer text-[#58a6ff] text-2xl"></i>
+                <h3 class="text-xl font-semibold text-[#58a6ff]">
+                  BlueClick - Auto Clicker
+                </h3>
+              </div>
+              <p class="text-gray-300 mb-4 leading-relaxed">
+                Aplikasi autoclicker modern untuk mengotomatiskan klik mouse dan
+                input keyboard dengan berbagai fitur canggih.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-3 py-1 bg-[#58a6ff]/10 text-[#58a6ff] rounded-full text-sm font-medium"
+                  >Python</span
+                >
+                <span
+                  class="px-3 py-1 bg-[#58a6ff]/10 text-[#58a6ff] rounded-full text-sm font-medium"
+                  >PyQt5</span
+                >
+                <span
+                  class="px-3 py-1 bg-[#58a6ff]/10 text-[#58a6ff] rounded-full text-sm font-medium"
+                  >GUI</span
+                >
+                <span
+                  class="px-3 py-1 bg-[#58a6ff]/10 text-[#58a6ff] rounded-full text-sm font-medium"
+                  >Automation</span
+                >
+              </div>
+              <div class="flex gap-4">
+                <a
+                  href="https://github.com/kurnya/BlueClick"
+                  target="_blank"
+                  class="inline-flex items-center gap-2 text-gray-400 hover:text-[#58a6ff] transition-all duration-300 font-medium relative group/link"
+                >
+                  <i
+                    class="fab fa-github group-hover/link:scale-110 transition-transform duration-300"
+                  ></i>
+                  <span class="relative">
+                    Source Code
+                    <span
+                      class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#58a6ff] transition-all duration-300 group-hover/link:w-full"
+                    ></span>
+                  </span>
+                </a>
+                <a
+                  href="https://github.com/kurnya/BlueClick/releases"
+                  target="_blank"
+                  class="inline-flex items-center gap-2 text-[#58a6ff] hover:text-[#79c0ff] transition-all duration-300 font-medium relative group/link"
+                >
+                  <i
+                    class="fas fa-download group-hover/link:scale-110 transition-transform duration-300"
+                  ></i>
+                  <span class="relative">
+                    Download
+                    <span
+                      class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#79c0ff] transition-all duration-300 group-hover/link:w-full"
+                    ></span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="project-card hover:border-[#58a6ff] transition-all duration-300 hover:-translate-y-1"
+        >
+          <div class="relative overflow-hidden rounded-t-xl">
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-4">
+                <i class="fas fa-clinic-medical text-[#58a6ff] text-2xl"></i>
+                <h3 class="text-xl font-semibold text-[#58a6ff]">
+                  Klinik Billing System
+                </h3>
+              </div>
+              <p class="text-gray-300 mb-4 leading-relaxed">
+                Sistem informasi klinik untuk manajemen data pasien, rekam
+                medis, dan billing dengan fitur lengkap untuk kebutuhan
+                operasional klinik.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-3 py-1 bg-[#58a6ff]/10 text-[#58a6ff] rounded-full text-sm font-medium"
+                  >Laravel</span
+                >
+                <span
+                  class="px-3 py-1 bg-[#58a6ff]/10 text-[#58a6ff] rounded-full text-sm font-medium"
+                  >PHP</span
+                >
+                <span
+                  class="px-3 py-1 bg-[#58a6ff]/10 text-[#58a6ff] rounded-full text-sm font-medium"
+                  >MySQL</span
+                >
+                <span
+                  class="px-3 py-1 bg-[#58a6ff]/10 text-[#58a6ff] rounded-full text-sm font-medium"
+                  >Tailwind CSS</span
+                >
+              </div>
+              <div class="flex gap-4">
+                <a
+                  href="#"
+                  onclick="
+                    showCustomAlert();
+                    return false;
+                  "
+                  class="inline-flex items-center gap-2 text-[#58a6ff] hover:text-[#79c0ff] transition-all duration-300 font-medium relative group/link"
+                >
+                  <i
+                    class="fas fa-external-link-alt group-hover/link:scale-110 transition-transform duration-300"
+                  ></i>
+                  <span class="relative">
+                    Live Demo
+                    <span
+                      class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#79c0ff] transition-all duration-300 group-hover/link:w-full"
+                    ></span>
+                  </span>
+                </a>
+                <button
+                  onclick="showGalleryModal()"
+                  class="inline-flex items-center gap-2 text-gray-400 hover:text-[#58a6ff] transition-all duration-300 font-medium relative group/link"
+                >
+                  <i
+                    class="fas fa-images group-hover/link:scale-110 transition-transform duration-300"
+                  ></i>
+                  <span class="relative">
+                    Gallery
+                    <span
+                      class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#58a6ff] transition-all duration-300 group-hover/link:w-full"
+                    ></span>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section
+      id="certificates"
+      class="bg-[#161b22] mx-6 md:mx-12 my-10 p-10 rounded-2xl shadow-lg relative overflow-hidden"
+    >
+      <div
+        class="absolute top-0 left-0 w-24 h-24 bg-[#58a6ff]/5 rounded-full blur-2xl"
+      ></div>
+      <div
+        class="absolute bottom-0 right-0 w-32 h-32 bg-[#238636]/5 rounded-full blur-3xl"
+      ></div>
+
+      <h2
+        class="text-3xl font-bold text-[#58a6ff] text-center mb-12 relative z-10"
+      >
+        Sertifikat & Penghargaan
+      </h2>
+
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto relative z-10"
+      >
+        <div
+          class="certificate-card"
+          onclick="
+            openModal(
+              'sertifikat/1.jpg',
+              'Virtual Exchange Fall Semester Program 2023-2024 Di Asia University, Taiwan.',
+            )
+          "
+        >
+          <div class="relative overflow-hidden rounded-t-xl group">
+            <img
+              src="sertifikat/1.jpg"
+              alt="Sertifikat 1"
+              class="certificate-img transition-transform duration-300 group-hover:scale-105"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+            >
+              <i
+                class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              ></i>
+            </div>
+          </div>
+          <div class="p-4">
+            <p class="certificate-text">
+              Virtual Exchange Fall Semester Program 2023-2024 Di Asia
+              University, Taiwan.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="certificate-card"
+          onclick="
+            openModal(
+              'sertifikat/4.jpg',
+              'Peraih IPK Tertinggi (3.95) Program Studi Sistem Informasi Tahun 2024.',
+            )
+          "
+        >
+          <div class="relative overflow-hidden rounded-t-xl group">
+            <img
+              src="sertifikat/4.jpg"
+              alt="Sertifikat 2"
+              class="certificate-img transition-transform duration-300 group-hover:scale-105"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+            >
+              <i
+                class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              ></i>
+            </div>
+          </div>
+          <div class="p-4">
+            <p class="certificate-text">
+              Peraih IPK Tertinggi (3.95) Program Studi Sistem Informasi Tahun
+              2024.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="certificate-card"
+          onclick="
+            openModal(
+              'sertifikat/6.jpg',
+              'Juara Favorit Gagasan kreatif pada Pilmapres (Pemilihan Mahasiswa Berprestasi) Tingkat Universitas Muhammadiyah Pontianak Tahun 2024.',
+            )
+          "
+        >
+          <div class="relative overflow-hidden rounded-t-xl group">
+            <img
+              src="sertifikat/6.jpg"
+              alt="Sertifikat 3"
+              class="certificate-img transition-transform duration-300 group-hover:scale-105"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+            >
+              <i
+                class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              ></i>
+            </div>
+          </div>
+          <div class="p-4">
+            <p class="certificate-text">
+              Juara Favorit Gagasan kreatif pada Pilmapres (Pemilihan Mahasiswa
+              Berprestasi) Tingkat Universitas Muhammadiyah Pontianak Tahun
+              2024.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="certificate-card"
+          onclick="
+            openModal(
+              'sertifikat/7.jpg',
+              'Juara Harapan 1 pada Pilmapres (Pemilihan Mahasiswa Berprestasi) Tingkat Universitas Muhammadiyah Pontianak Tahun 2025.',
+            )
+          "
+        >
+          <div class="relative overflow-hidden rounded-t-xl group">
+            <img
+              src="sertifikat/7.jpg"
+              alt="Sertifikat 4"
+              class="certificate-img transition-transform duration-300 group-hover:scale-105"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+            >
+              <i
+                class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              ></i>
+            </div>
+          </div>
+          <div class="p-4">
+            <p class="certificate-text">
+              Juara Harapan 1 pada Pilmapres (Pemilihan Mahasiswa Berprestasi)
+              Tingkat Universitas Muhammadiyah Pontianak Tahun 2025.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="certificate-card"
+          onclick="
+            openModal(
+              'sertifikat/2.jpg',
+              'Students Exchange to i-CATS University College (UC) and Universiti Malaysia Sarawak (UNIMAS) 2025.',
+            )
+          "
+        >
+          <div class="relative overflow-hidden rounded-t-xl group">
+            <img
+              src="sertifikat/2.jpg"
+              alt="Sertifikat 5"
+              class="certificate-img transition-transform duration-300 group-hover:scale-105"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+            >
+              <i
+                class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              ></i>
+            </div>
+          </div>
+          <div class="p-4">
+            <p class="certificate-text">
+              Students Exchange to i-CATS University College (UC) and Universiti
+              Malaysia Sarawak (UNIMAS) 2025.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="certificate-card"
+          onclick="
+            openModal(
+              'sertifikat/3.jpg',
+              'Active participation in the Guest Lecture on IoT in Agriculture held on 16 May 2025 at I-CATS University College.',
+            )
+          "
+        >
+          <div class="relative overflow-hidden rounded-t-xl group">
+            <img
+              src="sertifikat/3.jpg"
+              alt="Sertifikat 6"
+              class="certificate-img transition-transform duration-300 group-hover:scale-105"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+            >
+              <i
+                class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              ></i>
+            </div>
+          </div>
+          <div class="p-4">
+            <p class="certificate-text">
+              Active participation in the Guest Lecture on "IoT in Agriculture"
+              held on 16 May 2025 at I-CATS University College.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="certificate-card"
+          onclick="
+            openModal(
+              'sertifikat/5.jpg',
+              'Mahasiswa Berprestasi Universitas Muhammadiyah Pontianak 2025.',
+            )
+          "
+        >
+          <div class="relative overflow-hidden rounded-t-xl group">
+            <img
+              src="sertifikat/5.jpg"
+              alt="Sertifikat 7"
+              class="certificate-img transition-transform duration-300 group-hover:scale-105"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+            >
+              <i
+                class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              ></i>
+            </div>
+          </div>
+          <div class="p-4">
+            <p class="certificate-text">
+              Mahasiswa Berprestasi Universitas Muhammadiyah Pontianak 2025.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATE MODAL -->
+    <div
+      id="certificate-modal"
+      class="fixed inset-0 bg-black bg-opacity-75 hidden z-50 flex items-center justify-center p-4"
+    >
+      <div
+        class="bg-[#161b22] rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl"
+      >
+        <div
+          class="flex justify-between items-center p-6 border-b border-[#30363d]"
+        >
+          <h3 class="text-xl font-semibold text-[#58a6ff]">Sertifikat</h3>
+          <button
+            onclick="closeModal()"
+            class="text-gray-400 hover:text-white transition-colors duration-300"
+          >
+            <i class="fas fa-times text-2xl"></i>
+          </button>
+        </div>
+        <div class="p-6">
+          <img
+            id="modal-image"
+            src=""
+            alt="Certificate"
+            class="w-full h-auto rounded-lg border border-[#30363d]"
+          />
+          <p
+            id="modal-description"
+            class="text-gray-300 mt-4 text-center leading-relaxed"
+          ></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔹 CONTACT -->
+    <section
+      id="contact"
+      class="bg-[#161b22] mx-4 sm:mx-6 md:mx-12 my-10 p-6 md:p-10 rounded-2xl shadow-lg relative overflow-hidden"
+    >
+      <div
+        class="absolute top-0 right-0 w-32 h-32 bg-[#58a6ff]/5 rounded-full blur-3xl"
+      ></div>
+      <div
+        class="absolute bottom-0 left-0 w-24 h-24 bg-[#238636]/5 rounded-full blur-2xl"
+      ></div>
+
+      <h2
+        class="text-2xl md:text-3xl font-bold text-[#58a6ff] text-center mb-8 md:mb-12 relative z-10"
+      >
+        Kontak Saya
+      </h2>
+
+      <div class="max-w-2xl mx-auto relative z-10">
+        <div class="text-center space-y-6 md:space-y-8">
+          <div
+            class="bg-[#21262d] border border-[#30363d] p-5 md:p-8 rounded-2xl"
+          >
+            <h3
+              class="text-xl md:text-2xl font-semibold text-white mb-4 md:mb-6"
+            >
+              Mari Terhubung
+            </h3>
+            <p
+              class="text-gray-400 text-sm md:text-base leading-relaxed mb-6 md:mb-8 px-2"
+            >
+              Tertarik untuk berkolaborasi atau memiliki pertanyaan? Jangan ragu
+              untuk menghubungi saya melalui email atau media sosial.
+            </p>
+
+            <!-- Email -->
+            <div
+              class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-6 md:mb-8"
+            >
+              <div
+                class="bg-gradient-to-br from-[#58a6ff]/20 to-[#58a6ff]/10 p-3 md:p-4 rounded-xl border border-[#58a6ff]/20 flex-shrink-0"
+              >
+                <i
+                  class="fas fa-envelope text-[#58a6ff] text-xl md:text-2xl"
+                ></i>
+              </div>
+              <div class="text-center sm:text-left">
+                <p class="text-gray-400 text-xs md:text-sm mb-1">Email</p>
+                <a
+                  href="mailto:dimasqpr23@gmail.com"
+                  class="text-[#58a6ff] hover:text-[#79c0ff] transition-colors duration-300 font-medium text-sm md:text-lg break-all"
+                >
+                  dimasqpr23@gmail.com
+                </a>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div>
+              <h4
+                class="text-base md:text-lg font-semibold text-white mb-4 md:mb-6"
+              >
+                Ikuti Saya
+              </h4>
+              <div class="flex flex-wrap gap-3 md:gap-6 justify-center">
+                <a
+                  href="https://github.com/kurnya"
+                  target="_blank"
+                  class="bg-[#21262d] border border-[#30363d] p-3 md:p-4 rounded-xl hover:border-[#58a6ff] hover:bg-[#58a6ff]/10 transition-all duration-300 group"
+                >
+                  <i
+                    class="fab fa-github text-gray-400 group-hover:text-[#58a6ff] text-xl md:text-2xl transition-colors duration-300"
+                  ></i>
+                </a>
+                <a
+                  href="https://linkedin.com/in/dimas-kurniawan"
+                  target="_blank"
+                  class="bg-[#21262d] border border-[#30363d] p-3 md:p-4 rounded-xl hover:border-[#58a6ff] hover:bg-[#58a6ff]/10 transition-all duration-300 group"
+                >
+                  <i
+                    class="fab fa-linkedin-in text-gray-400 group-hover:text-[#58a6ff] text-xl md:text-2xl transition-colors duration-300"
+                  ></i>
+                </a>
+                <a
+                  href="https://instagram.com/dimasqpr"
+                  target="_blank"
+                  class="bg-[#21262d] border border-[#30363d] p-3 md:p-4 rounded-xl hover:border-[#58a6ff] hover:bg-[#58a6ff]/10 transition-all duration-300 group"
+                >
+                  <i
+                    class="fab fa-instagram text-gray-400 group-hover:text-[#58a6ff] text-xl md:text-2xl transition-colors duration-300"
+                  ></i>
+                </a>
+                <a
+                  href="https://wa.me/6281234567890"
+                  target="_blank"
+                  class="bg-[#21262d] border border-[#30363d] p-3 md:p-4 rounded-xl hover:border-[#58a6ff] hover:bg-[#58a6ff]/10 transition-all duration-300 group"
+                >
+                  <i
+                    class="fab fa-whatsapp text-gray-400 group-hover:text-[#58a6ff] text-xl md:text-2xl transition-colors duration-300"
+                  ></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🔹 FOOTER -->
+    <footer class="bg-[#161b22] border-t border-[#30363d] py-12 mt-20">
+      <div class="max-w-6xl mx-auto px-6 md:px-12">
+        <div class="grid md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="text-xl font-bold text-[#58a6ff] mb-4">
+              Dimas Kurniawan
+            </h3>
+            <p class="text-gray-400 leading-relaxed">
+              Mahasiswa Sistem Informasi yang tertarik pada Machine Learning dan
+              Frontend Development.
+            </p>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold text-white mb-4">
+              Navigasi Cepat
+            </h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#about"
+                  class="text-gray-400 hover:text-[#58a6ff] transition-colors duration-300"
+                  >Tentang</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#skills"
+                  class="text-gray-400 hover:text-[#58a6ff] transition-colors duration-300"
+                  >Keahlian</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#projects"
+                  class="text-gray-400 hover:text-[#58a6ff] transition-colors duration-300"
+                  >Proyek</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#certificates"
+                  class="text-gray-400 hover:text-[#58a6ff] transition-colors duration-300"
+                  >Sertifikat</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-gray-400 hover:text-[#58a6ff] transition-colors duration-300"
+                  >Kontak</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold text-white mb-4">Ikuti Saya</h4>
+            <div class="flex gap-4">
+              <a
+                href="https://github.com/kurnya"
+                target="_blank"
+                class="text-gray-400 hover:text-[#58a6ff] transition-colors duration-300 text-2xl"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+              <a
+                href="https://linkedin.com/in/dimas-kurniawan"
+                target="_blank"
+                class="text-gray-400 hover:text-[#58a6ff] transition-colors duration-300 text-2xl"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a
+                href="https://instagram.com/dimasqpr"
+                target="_blank"
+                class="text-gray-400 hover:text-[#58a6ff] transition-colors duration-300 text-2xl"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://wa.me/6281234567890"
+                target="_blank"
+                class="text-gray-400 hover:text-[#58a6ff] transition-colors duration-300 text-2xl"
+              >
+                <i class="fab fa-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-[#30363d] mt-8 pt-8 text-center">
+          <p class="text-gray-400">
+            Dibuat Oleh Dimas Kurniawan | Built using HTML, Tailwind CSS &
+            JavaScript
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <style>
+      .skill-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.25rem;
+        border: 1px solid #30363d;
+        border-radius: 9999px;
+        background-color: #21262d;
+        color: #58a6ff;
+        font-weight: 500;
+        transition: all 0.2s ease;
+      }
+      .skill-item:hover {
+        transform: translateY(-4px);
+        border-color: #58a6ff;
+      }
+      .project-card {
+        width: 18rem;
+        background-color: #21262d;
+        border: 1px solid #30363d;
+        padding: 1.5rem;
+        border-radius: 0.75rem;
+        text-align: center;
+      }
+      .certificate-card {
+        background-color: #21262d;
+        border: 1px solid #30363d;
+        padding: 1rem;
+        border-radius: 0.75rem;
+        text-align: center;
+        transition: all 0.2s ease;
+        cursor: pointer;
+      }
+      .certificate-card:hover {
+        transform: translateY(-4px);
+        border-color: #58a6ff;
+      }
+      .certificate-img {
+        width: 100%;
+        border-radius: 0.5rem;
+        margin-bottom: 0.75rem;
+        border: 1px solid #30363d;
+      }
+      .certificate-text {
+        color: #d1d5db;
+        font-size: 0.875rem;
+      }
+    </style>
+
+    <!-- 🔹 Certificate Modal Script -->
+    <script>
+      function openModal(imageSrc, description) {
+        document.getElementById("modal-image").src = imageSrc;
+        document.getElementById("modal-description").textContent = description;
+        document.getElementById("certificate-modal").classList.remove("hidden");
+      }
+
+      function closeModal() {
+        document.getElementById("certificate-modal").classList.add("hidden");
+      }
+
+      // Close modal when clicking outside
+      document
+        .getElementById("certificate-modal")
+        .addEventListener("click", function (e) {
+          if (e.target === this) {
+            closeModal();
+          }
+        });
+
+      // Close modal with Escape key
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          closeModal();
+        }
+      });
+    </script>
+
+    <!-- 🔹 GSAP Scroll Animations -->
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Animate sections on scroll
+      gsap.utils.toArray("section").forEach((section, index) => {
+        gsap.from(section, {
+          opacity: 0,
+          y: 50,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: section,
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse",
+          },
+        });
+      });
+
+      // Animate section headings
+      gsap.utils.toArray("section h2").forEach((heading) => {
+        gsap.from(heading, {
+          opacity: 0,
+          y: 30,
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: heading,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        });
+      });
+
+      // Animate about section items
+      gsap.utils.toArray("#about .flex.items-start").forEach((item, index) => {
+        gsap.from(item, {
+          opacity: 0,
+          x: index % 2 === 0 ? -50 : 50,
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: item,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        });
+      });
+
+      // Animate skills progress bars
+      gsap.utils.toArray(".skill-progress").forEach((skill) => {
+        const progressBar = skill.querySelector(".progress-fill");
+        const width = progressBar.style.width;
+
+        gsap.from(progressBar, {
+          width: 0,
+          duration: 1.5,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: skill,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        });
+      });
+
+      // Animate project cards
+      gsap.utils.toArray(".project-card").forEach((card, index) => {
+        gsap.from(card, {
+          opacity: 0,
+          y: 50,
+          duration: 0.8,
+          ease: "power3.out",
+          delay: index * 0.1,
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        });
+      });
+
+      // Animate certificate cards
+      gsap.utils.toArray(".certificate-card").forEach((card, index) => {
+        gsap.from(card, {
+          opacity: 0,
+          scale: 0.8,
+          duration: 0.6,
+          ease: "back.out(1.7)",
+          delay: index * 0.05,
+          scrollTrigger: {
+            trigger: card,
+            start: "top 90%",
+            toggleActions: "play none none reverse",
+          },
+        });
+      });
+    </script>
+
+    <script>
+      function calculateAge() {
+        const birthDate = new Date(2003, 2, 3);
+        const today = new Date();
+        let age = today.getFullYear() - birthDate.getFullYear();
+        const monthDiff = today.getMonth() - birthDate.getMonth();
+        if (
+          monthDiff < 0 ||
+          (monthDiff === 0 && today.getDate() < birthDate.getDate())
+        ) {
+          age--;
+        }
+        return age;
+      }
+      document.getElementById("age-display").textContent = calculateAge();
+    </script>
+
+    <!-- Custom Alert Modal -->
+    <div
+      id="custom-alert"
+      class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden opacity-0 transition-opacity duration-300"
+    >
+      <div
+        class="bg-[#161b22] border border-[#30363d] rounded-2xl p-8 max-w-md mx-4 shadow-2xl transform scale-95 transition-transform duration-300"
+        id="custom-alert-content"
+      >
+        <div class="flex items-center gap-4 mb-6">
+          <div
+            class="flex-shrink-0 w-12 h-12 bg-[#58a6ff]/10 rounded-full flex items-center justify-center"
+          >
+            <i class="fas fa-info-circle text-[#58a6ff] text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white">Informasi Akses</h3>
+        </div>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          Aplikasi Klinik Billing System berjalan di
+          <span class="text-[#58a6ff] font-semibold">lokal server</span> dan
+          hanya dapat diakses dari jaringan internal rumah sakit.
+        </p>
+        <div class="bg-[#21262d] border border-[#30363d] rounded-lg p-4 mb-6">
+          <div class="flex items-start gap-3">
+            <i class="fas fa-network-wired text-[#238636] mt-1"></i>
+            <div>
+              <p class="text-gray-300 text-sm">
+                Untuk demo langsung, silakan hubungi administrator atau kunjungi
+                lokasi dengan akses jaringan internal.
+              </p>
+            </div>
+          </div>
+        </div>
+        <button
+          onclick="closeCustomAlert()"
+          class="w-full bg-gradient-to-r from-[#238636] to-[#2ea043] hover:from-[#2ea043] hover:to-[#238636] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:-translate-y-0.5"
+        >
+          Mengerti
+        </button>
+      </div>
+    </div>
+
+    <!-- BMKG Alert Modal -->
+    <div
+      id="bmgk-alert"
+      class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden opacity-0 transition-opacity duration-300"
+    >
+      <div
+        class="bg-[#161b22] border border-[#30363d] rounded-2xl p-8 max-w-md mx-4 shadow-2xl transform scale-95 transition-transform duration-300"
+        id="bmgk-alert-content"
+      >
+        <div class="flex items-center gap-4 mb-6">
+          <div
+            class="flex-shrink-0 w-12 h-12 bg-[#58a6ff]/10 rounded-full flex items-center justify-center"
+          >
+            <i class="fas fa-lock text-[#58a6ff] text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white">Akses Terbatas</h3>
+        </div>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          Source code untuk
+          <span class="text-[#58a6ff] font-semibold"
+            >Website Monitoring Cuaca BMKG</span
+          >
+          merupakan properti terbatas dan tidak dapat diakses secara publik.
+        </p>
+        <div class="bg-[#21262d] border border-[#30363d] rounded-lg p-4 mb-6">
+          <div class="flex items-start gap-3">
+            <i class="fas fa-info-circle text-[#58a6ff] mt-1"></i>
+            <div>
+              <p class="text-gray-300 text-sm">
+                Untuk keperluan demonstrasi atau informasi lebih lanjut, silakan
+                hubungi langsung melalui kontak yang tersedia.
+              </p>
+            </div>
+          </div>
+        </div>
+        <button
+          onclick="closeBMKGAlert()"
+          class="w-full bg-gradient-to-r from-[#238636] to-[#2ea043] hover:from-[#2ea043] hover:to-[#238636] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:-translate-y-0.5"
+        >
+          Mengerti
+        </button>
+      </div>
+    </div>
+
+    <!-- Gallery Modal -->
+    <div
+      id="gallery-modal"
+      class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 hidden opacity-0 transition-opacity duration-300"
+    >
+      <div
+        class="relative max-w-6xl w-full mx-4 max-h-[90vh] overflow-y-auto"
+        id="gallery-content"
+      >
+        <!-- Close Button -->
+        <button
+          onclick="closeGalleryModal()"
+          class="absolute -top-12 right-0 text-gray-400 hover:text-white transition-colors duration-300"
+        >
+          <i class="fas fa-times text-3xl"></i>
+        </button>
+
+        <!-- Header -->
+        <div class="text-center mb-8">
+          <h3 class="text-2xl font-bold text-white mb-2">
+            Klinik Billing System - Gallery
+          </h3>
+          <p class="text-gray-400 text-sm">
+            Screenshots dari aplikasi Klinik Billing System
+          </p>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Screenshot 1 - Dashboard Utama -->
+          <div
+            class="group relative overflow-hidden rounded-xl border border-[#30363d] bg-[#161b22]"
+          >
+            <img
+              src="klinik-screenshots/Cuplikan layar 2026-03-15 194358.png"
+              alt="Dashboard Utama"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center"
+            >
+              <span
+                class="text-white text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-4 text-center"
+              >
+                Dashboard Utama
+              </span>
+            </div>
+          </div>
+
+          <!-- Screenshot 2 - Pembayaran -->
+          <div
+            class="group relative overflow-hidden rounded-xl border border-[#30363d] bg-[#161b22]"
+          >
+            <img
+              src="klinik-screenshots/Cuplikan layar 2026-03-15 194412.png"
+              alt="Pembayaran"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center"
+            >
+              <span
+                class="text-white text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-4 text-center"
+              >
+                Pembayaran
+              </span>
+            </div>
+          </div>
+
+          <!-- Screenshot 3 - Detail Transaksi -->
+          <div
+            class="group relative overflow-hidden rounded-xl border border-[#30363d] bg-[#161b22]"
+          >
+            <img
+              src="klinik-screenshots/Cuplikan layar 2026-03-15 194446.png"
+              alt="Detail Transaksi"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center"
+            >
+              <span
+                class="text-white text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-4 text-center"
+              >
+                Detail Transaksi
+              </span>
+            </div>
+          </div>
+
+          <!-- Screenshot 4 - Manajemen Item -->
+          <div
+            class="group relative overflow-hidden rounded-xl border border-[#30363d] bg-[#161b22]"
+          >
+            <img
+              src="klinik-screenshots/Cuplikan layar 2026-03-15 194458.png"
+              alt="Manajemen Item"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center"
+            >
+              <span
+                class="text-white text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-4 text-center"
+              >
+                Manajemen Item
+              </span>
+            </div>
+          </div>
+
+          <!-- Screenshot 5 - Laporan -->
+          <div
+            class="group relative overflow-hidden rounded-xl border border-[#30363d] bg-[#161b22]"
+          >
+            <img
+              src="klinik-screenshots/Cuplikan layar 2026-03-15 194511.png"
+              alt="Laporan"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center"
+            >
+              <span
+                class="text-white text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-4 text-center"
+              >
+                Laporan
+              </span>
+            </div>
+          </div>
+
+          <!-- Screenshot 6 - Backup Data -->
+          <div
+            class="group relative overflow-hidden rounded-xl border border-[#30363d] bg-[#161b22]"
+          >
+            <img
+              src="klinik-screenshots/Cuplikan layar 2026-03-15 194538.png"
+              alt="Backup Data"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center"
+            >
+              <span
+                class="text-white text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-4 text-center"
+              >
+                Backup Data
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Info Note -->
+        <div
+          class="mt-8 bg-[#161b22] border border-[#30363d] rounded-xl p-4 text-center"
+        >
+          <p class="text-gray-400 text-sm">
+            <i class="fas fa-lock text-[#58a6ff] mr-2"></i>
+            Klinik Billing System - Proprietary Software (Source Code Tidak
+            Tersedia)
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function showCustomAlert() {
+        const modal = document.getElementById("custom-alert");
+        const content = document.getElementById("custom-alert-content");
+
+        modal.classList.remove("hidden");
+        setTimeout(() => {
+          modal.classList.remove("opacity-0");
+          content.classList.remove("scale-95");
+          content.classList.add("scale-100");
+        }, 10);
+      }
+
+      function closeCustomAlert() {
+        const modal = document.getElementById("custom-alert");
+        const content = document.getElementById("custom-alert-content");
+
+        modal.classList.add("opacity-0");
+        content.classList.remove("scale-100");
+        content.classList.add("scale-95");
+
+        setTimeout(() => {
+          modal.classList.add("hidden");
+        }, 300);
+      }
+
+      // Close modal when clicking outside
+      document
+        .getElementById("custom-alert")
+        .addEventListener("click", function (e) {
+          if (e.target === this) {
+            closeCustomAlert();
+          }
+        });
+
+      // Close modal with Escape key
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          closeCustomAlert();
+        }
+      });
+
+      // Gallery Modal Functions
+      function showGalleryModal() {
+        const modal = document.getElementById("gallery-modal");
+        const content = document.getElementById("gallery-content");
+
+        modal.classList.remove("hidden");
+        setTimeout(() => {
+          modal.classList.remove("opacity-0");
+          content.classList.remove("scale-95");
+          content.classList.add("scale-100");
+        }, 10);
+      }
+
+      function closeGalleryModal() {
+        const modal = document.getElementById("gallery-modal");
+        const content = document.getElementById("gallery-content");
+
+        modal.classList.add("opacity-0");
+        content.classList.remove("scale-100");
+        content.classList.add("scale-95");
+
+        setTimeout(() => {
+          modal.classList.add("hidden");
+        }, 300);
+      }
+
+      // Close gallery modal when clicking outside
+      document
+        .getElementById("gallery-modal")
+        .addEventListener("click", function (e) {
+          if (e.target === this) {
+            closeGalleryModal();
+          }
+        });
+
+      // Close gallery modal with Escape key
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          closeGalleryModal();
+        }
+      });
+
+      // BMKG Alert Modal Functions
+      function showBMKGAlert() {
+        const modal = document.getElementById("bmgk-alert");
+        const content = document.getElementById("bmgk-alert-content");
+
+        modal.classList.remove("hidden");
+        setTimeout(() => {
+          modal.classList.remove("opacity-0");
+          content.classList.remove("scale-95");
+          content.classList.add("scale-100");
+        }, 10);
+      }
+
+      function closeBMKGAlert() {
+        const modal = document.getElementById("bmgk-alert");
+        const content = document.getElementById("bmgk-alert-content");
+
+        modal.classList.add("opacity-0");
+        content.classList.remove("scale-100");
+        content.classList.add("scale-95");
+
+        setTimeout(() => {
+          modal.classList.add("hidden");
+        }, 300);
+      }
+
+      // Close BMKG modal when clicking outside
+      document
+        .getElementById("bmgk-alert")
+        .addEventListener("click", function (e) {
+          if (e.target === this) {
+            closeBMKGAlert();
+          }
+        });
+
+      // Close BMKG modal with Escape key
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          closeBMKGAlert();
+        }
+      });
+    </script>
+  </body>
+</html>
