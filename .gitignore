@@ -19,6 +19,6 @@ dist/
 .DS_Store
 Thumbs.db
 
-# TODO files
+# TODO files (updated for contributors task)
 TODO*.md
 
