@@ -98,27 +98,7 @@ export const fallbackPortfolioData = {
         internal: true,
       },
     },
-    {
-      title: "Portofolio Pribadi",
-      eyebrow: "Personal Branding",
-      status: "Online",
-      highlight: "Portfolio modern dengan React, galeri, dan layout responsif.",
-      description:
-        "Website portofolio responsif untuk menampilkan proyek, sertifikat, dan informasi pribadi dengan fokus pada pengalaman pengguna.",
-      tags: ["React", "Vite", "CSS"],
-      links: [
-        {
-          label: "Lihat Demo",
-          href: "https://kurnya.github.io/Portofolio/",
-          variant: "primary",
-        },
-        {
-          label: "Source Code",
-          href: "https://github.com/kurnya/Portofolio",
-          variant: "secondary",
-        },
-      ],
-    },
+
     {
       title: "Web Jadwal Satpam PT Oscarmas",
       eyebrow: "Sistem Internal",
