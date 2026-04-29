@@ -170,6 +170,9 @@ function App() {
   const [galleryOpen, setGalleryOpen] = useState(false);
   const [activeGalleryIndex, setActiveGalleryIndex] = useState(null);
   const [galleryZoom, setGalleryZoom] = useState(1);
+  const [dragStartX, setDragStartX] = useState(0);
+  const [dragCurrentX, setDragCurrentX] = useState(0);
+  const [translateX, setTranslateX] = useState(0);
   const [portfolio, setPortfolio] = useState(fallbackPortfolioData);
   const [dataSource, setDataSource] = useState("fallback");
   const age = useMemo(
@@ -236,6 +239,64 @@ function App() {
   const closeGalleryViewer = () => {
     setActiveGalleryIndex(null);
     setGalleryZoom(1);
+    setTranslateX(0);
+    setDragCurrentX(0);
+    setDragStartX(0);
+  };
+
+  const handleMouseDown = (e) => {
+    setDragStartX(e.clientX);
+    setDragCurrentX(e.clientX);
+  };
+
+  const handleMouseMove = (e) => {
+    if (dragStartX === 0) return;
+    setDragCurrentX(e.clientX);
+    const deltaX = e.clientX - dragStartX;
+    setTranslateX(deltaX);
+  };
+
+  const handleMouseUp = (e) => {
+    if (dragStartX === 0) return;
+    const deltaX = e.clientX - dragStartX;
+    if (Math.abs(deltaX) > 50) {
+      if (deltaX > 0) {
+        setActiveGalleryIndex((current) => (current > 0 ? current - 1 : clinicShots.length - 1));
+      } else {
+        setActiveGalleryIndex((current) => (current < clinicShots.length - 1 ? current + 1 : 0));
+      }
+    }
+    setDragStartX(0);
+    setDragCurrentX(0);
+    setTranslateX(0);
+  };
+
+  const handleTouchStart = (e) => {
+    setDragStartX(e.touches[0].clientX);
+    setDragCurrentX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    if (dragStartX === 0) return;
+    setDragCurrentX(e.touches[0].clientX);
+    const deltaX = e.touches[0].clientX - dragStartX;
+    setTranslateX(deltaX);
+    e.preventDefault();
+  };
+
+  const handleTouchEnd = (e) => {
+    if (dragStartX === 0) return;
+    const deltaX = dragCurrentX - dragStartX;
+    if (Math.abs(deltaX) > 50) {
+      if (deltaX > 0) {
+        setActiveGalleryIndex((current) => (current > 0 ? current - 1 : clinicShots.length - 1));
+      } else {
+        setActiveGalleryIndex((current) => (current < clinicShots.length - 1 ? current + 1 : 0));
+      }
+    }
+    setDragStartX(0);
+    setDragCurrentX(0);
+    setTranslateX(0);
   };
 
   const showNextImage = () => {
@@ -560,56 +621,30 @@ function App() {
 
       <Modal
         open={activeGalleryIndex !== null}
-        title="Preview Gambar"
+        title="Klinik Billing System"
         onClose={closeGalleryViewer}
       >
         {activeGalleryIndex !== null ? (
-          <div className="gallery-viewer">
-            <div className="gallery-viewer-toolbar">
-              <div className="gallery-counter">
-                {activeGalleryIndex + 1} / {clinicShots.length}
-              </div>
-              <div className="gallery-controls">
-                <button
-                  type="button"
-                  className="ghost-button"
-                  onClick={() => setGalleryZoom((zoom) => Math.max(1, zoom - 0.25))}
-                >
-                  Zoom Out
-                </button>
-                <button
-                  type="button"
-                  className="ghost-button"
-                  onClick={() => setGalleryZoom(1)}
-                >
-                  Reset
-                </button>
-                <button
-                  type="button"
-                  className="ghost-button"
-                  onClick={() => setGalleryZoom((zoom) => Math.min(3, zoom + 0.25))}
-                >
-                  Zoom In
-                </button>
-              </div>
-            </div>
-
-            <div className="gallery-stage">
-              <button type="button" className="nav-button" onClick={showPrevImage}>
-                Sebelumnya
-              </button>
-              <div className="gallery-image-frame">
-                <img
-                  src={clinicShots[activeGalleryIndex]}
-                  alt="Preview Klinik Billing System"
-                  className="gallery-preview-image"
-                  style={{ transform: `scale(${galleryZoom})` }}
-                />
-              </div>
-              <button type="button" className="nav-button" onClick={showNextImage}>
-                Berikutnya
-              </button>
-            </div>
+        <div 
+          className="modal-image-wrap"
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          style={{ cursor: translateX !== 0 ? 'grabbing' : 'grab' }}
+        >
+            <img 
+              src={clinicShots[activeGalleryIndex]}
+              alt="Screenshot Klinik Billing System" 
+              className="modal-image"
+              style={{ 
+                transform: `translateX(${translateX}px) scale(${galleryZoom})`,
+                transition: translateX !== 0 ? 'none' : 'transform 0.2s ease'
+              }}
+            />
           </div>
         ) : null}
       </Modal>
