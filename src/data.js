@@ -121,22 +121,22 @@ export const fallbackPortfolioData = {
       ],
     },
     {
-      title: "BlueClick - Auto Clicker",
+      title: "Kyron - Auto Clicker",
       eyebrow: "Desktop App",
       status: "Release Tersedia",
-      highlight: "Aplikasi autoclicker desktop dengan rilis yang bisa langsung dicoba.",
+      highlight: "Aplikasi autoclicker desktop modern dengan file .exe yang siap diunduh.",
       description:
-        "Aplikasi autoclicker modern untuk mengotomatiskan klik mouse dan input keyboard dengan berbagai fitur.",
-      tags: ["Python", "PyQt5", "GUI", "Automation"],
+        "Kyron adalah aplikasi autoclicker desktop berbasis Python dengan antarmuka modern, manajemen script, randomizer klik dan delay, serta rilis Windows yang siap dipakai.",
+      tags: ["Python", "Tkinter", "Desktop App", "Automation"],
       links: [
         {
           label: "Download",
-          href: "https://github.com/kurnya/BlueClick/releases",
+          href: "https://github.com/kurnya/Kyron/releases",
           variant: "primary",
         },
         {
           label: "Source Code",
-          href: "https://github.com/kurnya/BlueClick",
+          href: "https://github.com/kurnya/Kyron",
           variant: "secondary",
         },
       ],
